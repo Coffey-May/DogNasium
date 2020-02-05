@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color:rgb(194, 194, 194);
+    margin:0 auto;
+    height:8vh;
+   
+
+}
+
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+    color:white;
+    margin-top:2vh;
+}
+.navbar__link{
+    color:rgb(29, 29, 29);
+    text-decoration: none;
+    
+}

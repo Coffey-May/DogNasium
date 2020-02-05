@@ -1,0 +1,33 @@
+.planForm{
+    width:30vw;
+}
+
+.dogForms{
+    display:flex;
+    flex-direction: row;
+}
+.planTitle{
+    text-align: center;
+    width:100vw;
+    letter-spacing: 2vw;
+}
+
+.planListHeader{
+    text-align: center;
+    width:100vw;
+    letter-spacing: 5vw;
+}
+
+.addPlanBtn{
+    text-align: center;
+    width:10vw;
+    margin-left:45vw;
+}
+
+.plans{
+    text-align: center;
+    border:1px solid black;
+}
+.planTypeHeader{
+    text-align: center;
+}
