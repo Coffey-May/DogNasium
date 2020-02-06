@@ -15,9 +15,9 @@ export default (props) => {
 	return (
 <>
 
-		<h1 class="planListHeader"> PLANS</h1>
-        <button class="addPlanBtn" onClick={() => props.history.push("/plans/create")}>
-            Add Plan
+		<h1 className="planListHeader"> PLANS</h1>
+        <button className="addPlanBtn" onClick={() => props.history.push("/plans/create")}>
+            View plan options
         </button>
 		<div className="plans">
 			

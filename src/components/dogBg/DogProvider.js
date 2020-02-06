@@ -61,7 +61,7 @@ export const DogProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  Dog APPLICATION STATE CHANGED  ****")
+     
         // console.log(Events)
     }, [dogs])
 

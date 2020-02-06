@@ -1,21 +1,32 @@
 .planForm{
     width:30vw;
+    
 }
 
 .dogForms{
     display:flex;
-    flex-direction: row;
+    /* flex-direction: row;  */
+    /* display: inline-block; */
+    width:30vw;
+    text-align: right;
+
 }
 .planTitle{
     text-align: center;
     width:100vw;
     letter-spacing: 2vw;
+    padding-top:15vh;
+    margin:0 auto;
+    
 }
 
 .planListHeader{
     text-align: center;
     width:100vw;
     letter-spacing: 5vw;
+    padding-top:15vh;
+    margin:0 auto;
+   
 }
 
 .addPlanBtn{
@@ -27,7 +38,14 @@
 .plans{
     text-align: center;
     border:1px solid black;
+    display: flex;
+    flex-direction: row;
+    padding-top:15vh;
 }
 .planTypeHeader{
     text-align: center;
+}
+
+.optionals{
+    margin:0 auto;
 }

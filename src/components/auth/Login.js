@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./login.css"
 
 
+
+
 const Login = props => {
     const email = useRef()
     const password = useRef()
@@ -37,11 +39,13 @@ const Login = props => {
     }
 
     return (
-        <main className="container--login">
-            <section>
+        <main className="container--login" >
+             {/* <img src={require('../images/dogNasiumPic1.jpg')} />   */}
+             <h1 className="login_header">D O G<br/> N A S I U M</h1>
+            <section className="logForm">
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1 className="login_header">Welcome to Dognasium</h1>
-                    <h2>Please sign in</h2>
+                    
+                    <h2>Please sign in to continue</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input ref={email} type="email"
@@ -62,12 +66,15 @@ const Login = props => {
                         <button type="submit">
                             Sign in
                     </button>
-                    </fieldset>
-                </form>
-            </section>
-            <section className="link--register">
+                    <section className="link--register">
                 <Link to="/register">Not a member yet?</Link>
             </section>
+                    </fieldset>
+                </form>
+               
+            </section>
+          
+       
         </main>
     )
 }

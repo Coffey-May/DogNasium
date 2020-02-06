@@ -5,10 +5,12 @@ import Nav from "./Nav/Nav"
 import Login from "./auth/Login"
 import Register from "./auth/Register"
 import ApplicationViews from "./ApplicationViews"
+import {ParallaxProvider} from 'react-scroll-parallax';
 
 
 export default () => (
     <>
+    <ParallaxProvider>
         {/* <Route render={() => {
             if (localStorage.getItem("dognasium_user")) {
                 return (
@@ -25,5 +27,6 @@ export default () => (
 
         <Route path="/login" render={props => <Login {...props} />} />
          <Route path="/register" render={props => <Register {...props} />} /> 
+         </ParallaxProvider>
     </>
 )
