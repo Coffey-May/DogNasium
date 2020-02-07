@@ -3,15 +3,18 @@ import { PlanContext } from './PlanProvider';
 import { UserContext } from "../auth/UserProvider"
 import { OptionContext } from "./OptionProvider"
 import OptionFormList from "./OptionFormList"
+import {OrderConext} from "../orders/OrderProvider"
+// import {OrderProvider} from "../orders/OrderProvider"
 
-
-export default ({ onePlan }) => {
+export default ({ onePlan, props, history }) => {
   const { addPlan, plans, updatePlan } = useContext(PlanContext);
   const { options } = useContext(OptionContext)
+  // const {orders} = useContext(OrderContext)
 
   // const { addOption, options, updateOption } = useContext(OptionContext);
-  const [plan, setPlan] = useState({});
+  // const [order, setOrder] = useState({});
   const [option, setOption] = useState({});
+  const[plan, setPlan] = useState({})
   const planName = useRef("")
   const planETA = useRef("")
   const planCompletion = useRef("")
@@ -48,15 +51,15 @@ export default ({ onePlan }) => {
     //     planETA: Date.now()
     //   }).then(() => props.history.push('/plans'));
     // } else {
-    // addPlan({
+  //   addPlan({
 
 
-    //   planName: plan.planName,
-    //   planETA: Date.now(),
+  //     planName: plan.planName,
+  //     planETA: Date.now(),
 
 
-    //   userId: parseInt(localStorage.getItem('dognasium_user'))
-    // }).then(() => props.history.push('/plans'));
+  //     userId: parseInt(localStorage.getItem('dognasium_user'))
+  //   }).then(() => props.history.push('/plans'));
 
   };
 
@@ -95,66 +98,25 @@ export default ({ onePlan }) => {
           <fieldset>
             <div>
               {
-                options.map(op => <> 
-                <h4 className="optionals">{op.option}</h4>
-                <input type="checkbox"></input> </>)
+                options.map(op => <>
+                  <h3 className="optionals">{op.option}</h3>
+                  <input 
+                  type="checkbox"
+                  name="optionName"
+                  ref={option}
+                  required
+                  autoFocus
+                  className="form-control"
+                  proptype="varchar"
+                  placeholder="Option name"
+                  defaultValue={option.option}
+                  onChange={handleControlledInputChange}
+                  ></input> </>
+                  )
               }
             </div>
-            {/* </fieldset>
-          <fieldset>
-            <div className="form-group">
-            
-              <input
-                type="checkbox"
-                name="planCompletion"
-                ref={option}
-                required
-                autoFocus
-                className="form-control"
-                proptype="varchar"
-                placeholder="Plan Pet Store Option"
-                defaultValue={plan.option}
-                onChange={handleControlledInputChange}
-              />
-
-            </div>
           </fieldset>
-          <fieldset>
-            <div className="form-group">
-              <label htmlFor="name">Cafe Access{option.option}</label>
-              <input
-                type="checkbox"
-                name="planCompletion"
-                ref={option}
-                required
-                autoFocus
-                className="form-control"
-                proptype="varchar"
-                placeholder="Plan Cafe Discount Option"
-                defaultValue={plan.option}
-                onChange={handleControlledInputChange}
-              />
 
-            </div>
-          </fieldset>
-          <fieldset>
-            <div className="form-group">
-              <label htmlFor="name">Restaurant Access{option.option} </label>
-              <input
-                type="checkbox"
-                name="planCompletion"
-                ref={option}
-                required
-                autoFocus
-                className="form-control"
-                proptype="varchar"
-                placeholder="Plan Restaurant Discount Option"
-                defaultValue={plan.option}
-                onChange={handleControlledInputChange}
-              />
-
-            </div> */}
-          </fieldset>
           <fieldset>
             <div className="form-group">
               <label htmlFor="name">Plan Start Date:{onePlan.planETA} </label>

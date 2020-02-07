@@ -6,33 +6,34 @@ import "./Home.css";
 // import { EventContext } from "./EventProvider";
 
 export default (props) => {
-  
-  
+
+
 
   return (
-      <>
+    <>
       <main className="mainHome">
 
-<div className="Title">
-<h1><span className="dogSpan">
+        <div className="Title">
+          <h1><span className="dogSpan">
 
-<span>D</span>
-<span>o</span>
-<span>g</span>
-</span>
-</h1>
-<h2><span className="dogSpan2">
-<span>N</span>
-<span>A</span>
-<span>S</span>
-<span>I</span>
-<span>U</span>
-<span>M</span>
-</span>
-</h2>
-</div>
+            <span>D</span>
+            <span>O</span>
+            <span>G</span>
+          </span>
+          </h1>
+          <h2><span className="dogSpan2">
+            <span>N</span>
+            <span>A</span>
+            <span>S</span>
+            <span>I</span>
+            <span>U</span>
+            <span>M</span>
+          </span>
+          </h2>
+        </div>
+      </main>
 
-{/* var textWrapper = document.querySelector('.dogSpan');
+      {/* var textWrapper = document.querySelector('.dogSpan');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: true})
@@ -72,41 +73,35 @@ anime.timeline({loop: true})
     easing: "easeInExpo",
     duration: 0,
     delay: (el, i) => 1000000 + 30 * i
-  });
-          */}
+  )}; */}
 
-          <button className="PurchaseOptionsBtn">
-
+      <section className="homePageTwo">
+        <button className="PurchaseOptionsBtn">
           {
             localStorage.getItem("dognasium_user")
-            ? 
-            <Link className="navbar__link"
+              ?
+              <Link className="navbar__link"
                 to="/plans/create"
-              
-                >View Purchase options</Link>
-           
-                : 
-                <Link className="navbar__link"
-                    to="/Login"
-                    
-                    ><i>Please login <br/>
-                      to view<br/>
-                       purchase 
-                      options</i></Link>
-               
-            }
+              >View Purchase options</Link>
+              :
+              <Link className="navbar__link"
+                to="/Login"
+              ><i>Please login <br />
+                  to view<br />
+                  purchase
+                      options</i></Link>}
+        </button>
+      </section>
 
-       
-         </button>
-        
 
-         <button className="learnMoreBtn">
-         <Link className="navbar__link"
-                    to="/Login"
-                    
-                    >LearnMore</Link>
-         </button>
-         </main>
-      </>
+      <section className="homePageThree">
+        <button className="learnMoreBtn">
+          <Link className="navbar__link"
+            to="/Login"
+          >LearnMore</Link>
+        </button>
+        <h4 className="copyR">Ⓒ<i>Coffeyright 2020</i></h4>
+      </section>
+    </>
   )
 }

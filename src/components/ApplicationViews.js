@@ -2,49 +2,60 @@
 
 import React from "react";
 import { Route } from "react-router-dom";
-import { ParallaxProvider } from 'react-scroll-parallax';
+// import { ParallaxProvider } from 'react-scroll-parallax';
 import { UserProvider } from "./auth/UserProvider";
 import { PlanProvider } from "./plans/PlanProvider";
+import { OrderProvider } from "./orders/OrderProvider";
+import { OptionProvider } from "./plans/OptionProvider";
 import PlanList from "./plans/PlanList";
 import PlanForm from "./plans/PlanForm";
-import HomeList from "./home/HomeList"
-import PlanFormList from "./plans/PlanFormList"
-import {OptionProvider} from "./plans/OptionProvider"
+import OrderList from "./orders/OrderList";
+import HomeList from "./home/HomeList";
+import PlanFormList from "./plans/PlanFormList";
+
+// import Parallax from "./Parallax"
+
+
+
 
 export default props => {
     return (
         <>
 
-<ParallaxProvider>
+            {/* <ParallaxProvider> */}
             <UserProvider>
                 <OptionProvider>
-                <PlanProvider>
-                <Route
-                    exact
-                    path="/home"
-                    render={props => <HomeList {...props} />}
-                />
-                 <Route
-                    exact
-                    path="/plans"
-                    render={props => <PlanList {...props} />}
-                />
-                <Route
-                    path="/plans/create"
-                    render={props => <PlanFormList {...props}  /> 
-                
-                       }
-                    
-               />
-                <Route
-                    exact
-                    path="/plans/editPlans/:planId(\d+)"
-                    render={props => <PlanForm {...props} />}
-                /> 
-                </PlanProvider>
+                    <PlanProvider>
+                        <OrderProvider>
+
+                            <Route
+                                exact
+                                path="/home"
+                                render={props => <HomeList {...props} />}
+                            />
+                            <Route
+                                exact
+                                path="/plans"
+                                render={props => <PlanList {...props} />}
+                            />
+                            <Route
+                                path="/plans/create"
+                                render={props => <PlanFormList {...props} />}
+                            />
+                            <Route
+                                path="/orders"
+                                render={props => <OrderList {...props} />}
+                            />
+                            <Route
+                                exact
+                                path="/plans/editPlans/:planId(\d+)"
+                                render={props => <PlanForm {...props} />}
+                            />
+                        </OrderProvider>
+                    </PlanProvider>
                 </OptionProvider>
             </UserProvider>
-            </ParallaxProvider>
+            {/* </ParallaxProvider> */}
         </>
     );
 };
