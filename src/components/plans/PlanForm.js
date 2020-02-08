@@ -1,37 +1,38 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
+import { Route } from "react-router-dom";
 import { PlanContext } from './PlanProvider';
 import { UserContext } from "../auth/UserProvider"
 import { OptionContext } from "./OptionProvider"
-import OptionFormList from "./OptionFormList"
-import {OrderConext} from "../orders/OrderProvider"
-// import {OrderProvider} from "../orders/OrderProvider"
+import {OrderContext} from "../orders/OrderProvider"
+import Order from "../orders/OrderList"
 
 export default ({ onePlan, props, history }) => {
   const { addPlan, plans, updatePlan } = useContext(PlanContext);
   const { options } = useContext(OptionContext)
-  // const {orders} = useContext(OrderContext)
-
+  const {orders, addOrder, updateOrder} = useContext(OrderContext);
   // const { addOption, options, updateOption } = useContext(OptionContext);
-  // const [order, setOrder] = useState({});
   const [option, setOption] = useState({});
+  const [order, setOrder] = useState({});
   const[plan, setPlan] = useState({})
   const planName = useRef("")
   const planETA = useRef("")
+  const donate = useRef("")
   const planCompletion = useRef("")
+  
   // const option = useRef("")
-  // const editMode = props.match.params.hasOwnProperty('planId');
+  // const editMode = props.match.params.hasOwnProperty('orderId');
 
   const handleControlledInputChange = (event) => {
-    const newPlan = Object.assign({}, plan);
-    newPlan[event.target.name] = event.target.value;
-    setPlan(newPlan);
+    const newOrder = Object.assign({}, order);
+    newOrder[event.target.name] = event.target.value;
+    setOrder(newOrder);
   };
 
   // const setDefaults = () => {
   //   if (editMode) {
-  //     const planId = parseInt(props.match.params.planId);
-  //     const selectedPlan = plans.find((p) => p.id === planId) || {};
-  //     setPlan(selectedPlan);
+  //     const orderId = parseInt(props.match.params.orderId);
+  //     const selectedOrder = orders.find((o) => o.id === orderId) || {};
+  //     setOrder(selectedOrder);
   //   }
   // };
 
@@ -39,29 +40,37 @@ export default ({ onePlan, props, history }) => {
   //   () => {
   //     setDefaults();
   //   },
-  //   [plans]
+  //   [orders]
   // );
 
-  const constructNewPlan = () => {
-    // if (editMode) {
-    //   updatePlan({
-    //     id: plan.id,
-    //     userId: plan.userId,
-    //     planName: plan.planName,
-    //     planETA: Date.now()
-    //   }).then(() => props.history.push('/plans'));
-    // } else {
-  //   addPlan({
+  const constructNewOrder = () => { 
+  //   if (editMode) {
+  //     updateOrder({
+  //       id: order.id,
+  //       userId: order.userId,
+  //       orderType: order.orderType,
+        
+  //       orderETA: Date.now()
+  //     }).then(() => props.history.push('/orders'));
+  //   } else {
+  //   console.log(orders)
+    addOrder({
 
-
-  //     planName: plan.planName,
-  //     planETA: Date.now(),
-
-
-  //     userId: parseInt(localStorage.getItem('dognasium_user'))
-  //   }).then(() => props.history.push('/plans'));
+      orderType: onePlan.planName,
+      option: option.option,
+      option: option.option,
+      option: option.option,
+      length:"30 days",
+      price:1,
+      option:option.donate,
+      dateTime: Date.now(),
+     userId: parseInt(localStorage.getItem('dognasium_user'))
+    }).then
+    (() => props.history.push('/orders'));
 
   };
+
+  
 
 
 
@@ -140,13 +149,13 @@ export default ({ onePlan, props, history }) => {
               <input
                 type="text"
                 name="donateToRescue"
-                ref={planCompletion}
+                ref={donate}
                 required
                 autoFocus
                 className="form-control"
                 proptype="varchar"
                 placeholder="Donate to Animal Rescue"
-                defaultValue={plan.planETA}
+                defaultValue={option.donate}
                 onChange={handleControlledInputChange}
               />
             </div>
@@ -156,7 +165,9 @@ export default ({ onePlan, props, history }) => {
             onClick={(evt) => {
 
               evt.preventDefault();
-              constructNewPlan()
+              constructNewOrder()
+              
+             
             }}
             className="btn btn-primary"
           >

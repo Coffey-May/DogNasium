@@ -35,7 +35,7 @@ export default (props) => {
             {
 localStorage.getItem("dognasium_user")
            ? <li className="navbar__item">
-                 <Link className="navbar__link" to="/plans">My Cart</Link>
+                 <Link className="navbar__link" to="/orders">My Cart</Link>
             </li>
             :<li className="navbar__item">
                         <Link className="navbar__loginlink"

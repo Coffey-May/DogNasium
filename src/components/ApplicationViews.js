@@ -9,7 +9,7 @@ import { OrderProvider } from "./orders/OrderProvider";
 import { OptionProvider } from "./plans/OptionProvider";
 import PlanList from "./plans/PlanList";
 import PlanForm from "./plans/PlanForm";
-import OrderList from "./orders/OrderList";
+import Order from "./orders/OrderList";
 import HomeList from "./home/HomeList";
 import PlanFormList from "./plans/PlanFormList";
 
@@ -44,8 +44,9 @@ export default props => {
                             />
                             <Route
                                 path="/orders"
-                                render={props => <OrderList {...props} />}
+                                render={props => <Order {...props} />}
                             />
+                            
                             <Route
                                 exact
                                 path="/plans/editPlans/:planId(\d+)"

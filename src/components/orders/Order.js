@@ -10,7 +10,8 @@ export default ({ order, history, option}) => {
     return( 
     <section className="order">
         <h3 className="order__name">
-           <div className="order_name">{order.orderName}</div>
+           <div className="order_name">{order.orderType}</div>
+           <div className="order_name">{order.length}</div>
        {/* <div className="option_petStore">{option.option}</div> */}
        {/* <div className="plan_name">{option.cafe}</div>
            <div className="plan_name">{option.restaurant}</div> */}

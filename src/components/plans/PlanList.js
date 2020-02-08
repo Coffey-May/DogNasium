@@ -22,8 +22,6 @@ export default (props) => {
 		<div className="plans">
 			
 		{plans.map(plan => {
-			// const location = locations.find(loc => loc.id === animal.locationId) || {}
-			// const user = users.find(use => use.id === task.userId) || {}
     return <Plan {...props} key={plan.id} plan={plan}  />
 })}
 		</div>

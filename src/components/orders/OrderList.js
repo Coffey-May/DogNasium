@@ -15,19 +15,18 @@ export default (props) => {
 
 	return (
 <>
-
+<div className="orderList">
 		<h1 className="orderListHeader">ORDER</h1>
-        <button className="addPlanBtn" onClick={() => props.history.push("/orders/create")}>
+        <button className="addPlanBtn" onClick={() => props.history.push("/plans/create")}>
             View order options
         </button>
 		<div className="orders">
 			
 		{orders.map(order => {
-			// const location = locations.find(loc => loc.id === animal.locationId) || {}
-			// const user = users.find(use => use.id === task.userId) || {}
     return <Order {...props} key={order.id} order={order}  />
 })}
 		</div>
+        </div>
 		</>
 	);
 };
