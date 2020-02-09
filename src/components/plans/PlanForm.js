@@ -94,7 +94,7 @@ export default ({ onePlan, props }) => {
                 type="checkbox"
                 name="planName"
                 ref={planName}
-                required
+                required={true}
                 autoFocus
                 className="form-control"
                 proptype="varchar"

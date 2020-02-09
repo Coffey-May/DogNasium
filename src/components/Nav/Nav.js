@@ -5,6 +5,8 @@ import "./Nav.css"
 export default (props) => {
 
     return (
+        <nav className="navWrap sticky-top  ">
+              <div  id="navbarNav">
         <ul className="navbar navbar-dark">
             <li className="navbar__item">
                 <Link className="navbar__link" to="/home">Home</Link>
@@ -68,8 +70,14 @@ localStorage.getItem("dognasium_user")
 
                         >Login</Link>
                     </li>
+                    
             }
+              {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> */}
         </ul>
+        </div>
+        </nav>
     )
 }
 

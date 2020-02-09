@@ -24,6 +24,7 @@ fieldset{
     color:rgb(255, 255, 255);
     margin:0 auto;
     letter-spacing: 3vw;
+    font-size: 10vw;
   
 }
 
@@ -94,25 +95,30 @@ main{
     width:35vw;
     display: inline-block;
     text-align: center;
+    
 }
 
 #userNameRegister, #userEmailRegister, #userPasswordRegister{
     width:35vw;
     display: inline-block;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.493);
 }
 .registerSpan{
-    color:black;
+    color:rgb(6, 6, 6);
     font-weight: 500;
     letter-spacing: 1vw;
+    font-size: 7vw;
+    line-height: .5vh;
 }
 .registerHeader {
     /* color:white; */
-    font-size: xx-large;
+    /* font-size: xx-large; */
     font-weight:900;
     color:black;
     margin:0 auto;
     letter-spacing: 2vw;
     width:40vw;
+    font-size: 8vw;
 
 }

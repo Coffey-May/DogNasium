@@ -25,24 +25,56 @@ body{
     width:15vw;
     margin-Left:45vw;
     border-radius: 15%;
-     
-  
+    transform: scale();
+    transition: all 0.5s ;
+    animation-duration: 4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+.learnMoreBtn:hover{
+    opacity: 1;
+    transform: scale(2);
+    background-color: rgba(0, 0, 0, 0.571);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
 }
 .dogSpan .dogspan2{
   
    text-align: center;
    
 }
-
+.titleHole{
+    width:100vw;
+}
 
 .PurchaseOptionsBtn{
-    text-align: center; 
-    width:100vw;
+    display: inline-block;
+   
     background-color: rgba(0, 0, 0, 0.466);
     margin-top:15vh;
-    width:25vw;
-    margin-Left:45vw;
+
     border-radius: 15%;
+    transform: scale();
+    transition: all 0.5s ;
+    animation-duration: 4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+.PurchaseOptionsBtn:hover{
+    opacity: 1;
+    transform: scale(2);
+    background-color: rgba(0, 0, 0, 0.571);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+}
+.btnHolder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .Title{
@@ -93,17 +125,17 @@ body{
     left:0; 
     position: absolute;
     right:0;
-    top:120vh;
+    top:122vh;
     display: block;
     margin:0 auto;
-   
+ 
    
 
    
     background-image:linear-gradient(to right,rgba(119, 254, 1, 0.404) ,rgba(250, 1, 38, 0.31) ,rgba(186, 4, 247, 0.399)), url('./dogChurch2.png');
     background-size: cover;
     transform-origin:  center center 0;
-    transform: translateZ(-1px) scale(2.4);
+    transform: translateZ(-1px) scale(2.6);
     z-index: -2;
     min-height: 100vh;
 
@@ -130,7 +162,7 @@ body{
     justify-content: space-around;
 }
 .copyR{
-    margin-top:45vh;
+    margin-top:42vh;
     color:white;
 }
 
@@ -138,29 +170,111 @@ body{
 font-size: 8vw;
 display: inline-block;
 text-align: center;
-/* flex-basis: 10%; */
+width:100%;
+
+
+
 }
-.titleHole{
+.infoHover{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+}
+/* .Title:hover{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+
+} */
+
+/* flex-basis: 10%; */
+/* 
+.pageOneWrap:hover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -50px;
+    height: 50px;
+    width: 00%;
+  
+    box-sizing: border-box;
+   
+} */
+.pageOneWrap:hover, .pageOneWrap:hover{
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s;
+  animation-iteration-count: 0; 
+  animation-fill-mode: forwards; 
+  animation: circle 1s linear forwards;
+ 
+  
+  
+}
+.pageOneWrap{
     letter-spacing: 0.3vw;
-    font-size: larger;
+   
+    font-size: xx-large;
     font-weight: 400;
-    width:40vw;
+    width:100vw;
+    box-sizing: border-box  ;
+   
+    
+    /* height:40vh; */
     display: inline-block;
     text-align: center;
+    overflow:hidden;
+    opacity: 0;
+transform: scale(2);
+transition: all 0.5s ;
+animation-duration: 4s;
+animation-iteration-count: 1; 
+animation-fill-mode: forwards; 
+
+
+
    
 
 }
 
 .descriptions{
-    display: flex;
-    flex-direction: row;
+        display: flex;
+        flex-direction: row;
     text-align: center;
     justify-content: space-evenly;
     color:white;
 
 }
+.desc:hover{
+    opacity: 1;
+    transform: scale(2);
+    background-color: rgba(0, 0, 0, 0.747);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+}
 .desc{
-    width:25vw;
+    /* width:25vw; */
     background-color: rgba(255, 255, 255, 0.555);
     margin-top: 50vh;
+    opacity: 0.5;
+    color:white;
+    transform: scale();
+    transition: all 0.5s ;
+    animation-duration: 4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
 }
+
+/* .titleHole:after{
+width:0;
+transform-style: preserve-3d;
+
+} */
