@@ -1,14 +1,20 @@
 .planForm{
-    width:30vw;
-    
+    width:25vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
 }
-
+.form-group{
+    display:flex;
+    flex-direction: row;
+}
 .dogForms{
     display:flex;
     /* flex-direction: row;  */
     /* display: inline-block; */
     width:30vw;
-    text-align: right;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(147, 146, 146);
 
 }
 .planTitle{
@@ -17,14 +23,13 @@
     letter-spacing: 2vw;
     padding-top:15vh;
     margin:0 auto;
-    
 }
 
 .planListHeader{
     text-align: center;
     width:100vw;
     letter-spacing: 5vw;
-    padding-top:15vh;
+    /* padding-top:15vh; */
     margin:0 auto;
    
 }
@@ -40,7 +45,8 @@
     border:1px solid black;
     display: flex;
     flex-direction: row;
-    padding-top:15vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* padding-top:15vh; */
 }
 .planTypeHeader{
     text-align: center;
@@ -48,4 +54,13 @@
 
 .optionals{
     margin:0 auto;
+    font-size: larger;
+   
+}
+.planListHeader{
+    text-align: center;
+    font-size: xx-large;
+}
+label{
+    font-size: smaller;
 }

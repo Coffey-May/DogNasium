@@ -1,24 +1,28 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
-import { Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
+// import { createBrowserHistory } from "history";
 import { PlanContext } from './PlanProvider';
 import { UserContext } from "../auth/UserProvider"
-import { OptionContext } from "./OptionProvider"
-import {OrderContext} from "../orders/OrderProvider"
+import { OptionContext } from "../options/OptionProvider"
+import { OrderContext } from "../orders/OrderProvider"
 import Order from "../orders/OrderList"
 
-export default ({ onePlan, props, history }) => {
-  const { addPlan, plans, updatePlan } = useContext(PlanContext);
+import "../orders/Order"
+export default ({ onePlan, props }) => {
+  // const history = createBrowserHistory();
+  // const { addPlan, plans, updatePlan } = useContext(PlanContext);
   const { options } = useContext(OptionContext)
-  const {orders, addOrder, updateOrder} = useContext(OrderContext);
+  const { orders, addOrder, updateOrder } = useContext(OrderContext);
   // const { addOption, options, updateOption } = useContext(OptionContext);
   const [option, setOption] = useState({});
   const [order, setOrder] = useState({});
-  const[plan, setPlan] = useState({})
+  const [plan, setPlan] = useState({})
   const planName = useRef("")
+  const optionType = useRef("")
   const planETA = useRef("")
   const donate = useRef("")
-  const planCompletion = useRef("")
-  
+  // const planCompletion = useRef("")
+
   // const option = useRef("")
   // const editMode = props.match.params.hasOwnProperty('orderId');
 
@@ -26,6 +30,7 @@ export default ({ onePlan, props, history }) => {
     const newOrder = Object.assign({}, order);
     newOrder[event.target.name] = event.target.value;
     setOrder(newOrder);
+   
   };
 
   // const setDefaults = () => {
@@ -42,44 +47,40 @@ export default ({ onePlan, props, history }) => {
   //   },
   //   [orders]
   // );
+  
 
-  const constructNewOrder = () => { 
-  //   if (editMode) {
-  //     updateOrder({
-  //       id: order.id,
-  //       userId: order.userId,
-  //       orderType: order.orderType,
-        
-  //       orderETA: Date.now()
-  //     }).then(() => props.history.push('/orders'));
-  //   } else {
-  //   console.log(orders)
+  const constructNewOrder = () => {
+    //   if (editMode) {
+    //     updateOrder({
+    //       id: order.id,
+    //       userId: order.userId,
+    //       orderType: order.orderType,
+
+    //       orderETA: Date.now()
+    //     }).then(() => props.history.push('/orders'));
+    //   } else {
+    //   console.log(orders)
     addOrder({
 
       orderType: onePlan.planName,
       option: option.option,
       option: option.option,
       option: option.option,
-      length:"30 days",
-      price:1,
-      option:option.donate,
+      length: onePlan.length,
+      price: onePlan.price,
+      donate: onePlan.donate,
       dateTime: Date.now(),
-     userId: parseInt(localStorage.getItem('dognasium_user'))
-    }).then
-    (() => props.history.push('/orders'));
-
+      userId: parseInt(localStorage.getItem('dognasium_user')),
+      
+    })
+      .then
+      (() =>
+        props.history.push('/orders'));
   };
-
-  
-
-
 
   return (
     <>
-
-
-      <div className="dogForms">
-
+      <div className="dogForms container">
         <form className="planForm">
           {/* <h2 className="planTitle">{plan.planName}</h2> */}
           <h2 className="planForm__title">
@@ -108,22 +109,22 @@ export default ({ onePlan, props, history }) => {
             <div>
               {
                 options.map(op => <>
-                  <h3 className="optionals">{op.option}</h3>
-                  <input 
-                  type="checkbox"
-                  name="optionName"
-                  ref={option}
-                  required
-                  autoFocus
-                  className="form-control"
-                  proptype="varchar"
-                  placeholder="Option name"
-                  defaultValue={option.option}
-                  onChange={handleControlledInputChange}
+                  <h3 className="optionals">{op.optionType}</h3>
+                  <input
+                    type="checkbox"
+                    name="optionName"
+                    ref={optionType}
+                    required
+                    autoFocus
+                    className="form-control"
+                    proptype="varchar"
+                    placeholder="Option name"
+                    defaultValue={op.optionType}
+                    onChange={handleControlledInputChange}
                   ></input> </>
-                  )
+                )
               }
-            </div>
+            </div><br/>
           </fieldset>
 
           <fieldset>
@@ -145,7 +146,7 @@ export default ({ onePlan, props, history }) => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <label htmlFor="name">Donate to Rescue, any amount:{} </label>
+              <label htmlFor="name">Donate to Rescue, any amount:{plan.donate} </label>
               <input
                 type="text"
                 name="donateToRescue"
@@ -154,8 +155,8 @@ export default ({ onePlan, props, history }) => {
                 autoFocus
                 className="form-control"
                 proptype="varchar"
-                placeholder="Donate to Animal Rescue"
-                defaultValue={option.donate}
+                placeholder="Donate"
+                defaultValue={plan.donate}
                 onChange={handleControlledInputChange}
               />
             </div>
@@ -163,11 +164,11 @@ export default ({ onePlan, props, history }) => {
           <button
             type="submit"
             onClick={(evt) => {
-
+           
               evt.preventDefault();
               constructNewOrder()
               
-             
+
             }}
             className="btn btn-primary"
           >

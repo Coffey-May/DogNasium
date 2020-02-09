@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom"
+
 // import Event from "./Event";
 import "./Home.css";
 // import { Parallax } from "react-scroll-parallax";
@@ -11,7 +12,8 @@ export default (props) => {
 
   return (
     <>
-      <main className="mainHome">
+    <div className="homeWrap">
+      <main className="mainHome ">
 
         <div className="Title">
           <h1><span className="dogSpan">
@@ -30,7 +32,13 @@ export default (props) => {
             <span>M</span>
           </span>
           </h2>
+          <div className="titleHole">Welcome to Dog-Nasium. 
+          The Worlds first of its kind indoor dog park. 
+          Housed inside of an 80,000 square foot dome, 
+          Dog-Nasium offers a variety of amenities to dog owners of all kinds.
+           </div>
         </div>
+       
       </main>
 
       {/* var textWrapper = document.querySelector('.dogSpan');
@@ -76,6 +84,11 @@ anime.timeline({loop: true})
   )}; */}
 
       <section className="homePageTwo">
+        <div className="descriptions">
+        <div className="desc">a</div>
+        <div className="desc">a</div>
+        <div className="desc">a</div>
+        </div>
         <button className="PurchaseOptionsBtn">
           {
             localStorage.getItem("dognasium_user")
@@ -98,10 +111,11 @@ anime.timeline({loop: true})
         <button className="learnMoreBtn">
           <Link className="navbar__link"
             to="/Login"
-          >LearnMore</Link>
+          >Learn<br/>More</Link>
         </button>
         <h4 className="copyR">Ⓒ<i>Coffeyright 2020</i></h4>
       </section>
+      </div>
     </>
   )
 }

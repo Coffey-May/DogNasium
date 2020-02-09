@@ -47,7 +47,7 @@ const Login = props => {
                     
                     <h2>Please sign in to continue</h2>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label className="logReg" htmlFor="inputEmail"> Email address </label><br/>
                         <input ref={email} type="email"
                             id="email"
                             className="form-control"
@@ -55,7 +55,7 @@ const Login = props => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
+                        <label className="logReg" htmlFor="inputPassword"> Password </label><br/>
                         <input ref={password} type="password"
                             id="password"
                             className="form-control"
@@ -63,11 +63,11 @@ const Login = props => {
                             required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="signInBtn" type="submit">
                             Sign in
                     </button>
                     <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link className="regLink" to="/register">Not a member yet?</Link>
             </section>
                     </fieldset>
                 </form>

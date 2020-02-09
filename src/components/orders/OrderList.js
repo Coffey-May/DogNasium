@@ -23,7 +23,7 @@ export default (props) => {
 		<div className="orders">
 			
 		{orders.map(order => {
-    return <Order {...props} key={order.id} order={order}  />
+    return <Order {...props}  key={order.id} order={order}  />
 })}
 		</div>
         </div>

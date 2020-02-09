@@ -39,7 +39,7 @@ const Register = props => {
           .then(createdUser => {
             if (createdUser.hasOwnProperty("id")) {
               localStorage.setItem("dognasium_user", createdUser.id);
-              props.history.push("/");
+              props.history.push("/home");
             }
           });
       });
@@ -51,12 +51,15 @@ const Register = props => {
   return (
     <main style={{ textAlign: "center" }}>
       <form className="form--login" onSubmit={handleRegister}>
-        <h1 className="h3 mb-3 font-weight-normal">
-          Please Register for Dognasium
-        </h1>
+        <h3 className="h3 mb-3 font-weight-normal"
+        id="registerTitle"><span className="registerSpan">
+          Please Register for</span><br/>
+         <span className="registerHeader">D O G <br/>N A S I U M</span>  
+        </h3>
         <fieldset>
-          <label htmlFor="userName"> Username </label>
+          <label className="logReg" htmlFor="userName"> Username </label><br/>
           <input
+            id="userNameRegister"
             ref={userName}
             type="text"
             name="userName"
@@ -67,8 +70,9 @@ const Register = props => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="inputEmail"> Email address </label>
+          <label  className="logReg" htmlFor="inputEmail"> Email address </label><br/>
           <input
+            id="userEmailRegister"
             ref={email}
             type="email"
             name="email"
@@ -78,8 +82,9 @@ const Register = props => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="inputPassword"> Password </label>
+          <label className="logReg" htmlFor="inputPassword"> Password </label><br/>
           <input
+            id="userPasswordRegister"
             ref={password}
             type="password"
             name="password"
@@ -89,8 +94,9 @@ const Register = props => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="verifyPassword"> Verify Password </label>
+          <label className="logReg" htmlFor="verifyPassword"> Verify Password </label><br/>
           <input
+            id="userPasswordRegister"
             ref={verifyPassword}
             type="password"
             name="verifyPassword"

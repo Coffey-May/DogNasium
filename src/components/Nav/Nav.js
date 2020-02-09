@@ -5,10 +5,11 @@ import "./Nav.css"
 export default (props) => {
 
     return (
-        <ul className="navbar">
+        <ul className="navbar navbar-dark">
             <li className="navbar__item">
                 <Link className="navbar__link" to="/home">Home</Link>
             </li>
+          
 
             <li className="navbar__item">
 
@@ -22,10 +23,13 @@ export default (props) => {
                         >Plans</Link>
 
                         :
-                        <Link className="navbar__link"
+                        <Link 
+                        // onClick={  window.alert("You must Login to make Purchases")}
+                            className="navbar__link"
                             to="/Login"
 
                         >Plans</Link>
+                       
 
                 }
                 <Link className="navbar__link" to="/plans/create"></Link>
