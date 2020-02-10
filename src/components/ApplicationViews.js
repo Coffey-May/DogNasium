@@ -39,15 +39,16 @@ export default props => {
                                 path="/plans"
                                 render={props => <PlanList {...props} />}
                             />
+                               <Route
+                                exact
+                                path="/orders"
+                                render={props => <Order {...props} />}
+                            />    
                             <Route
                                 path="/plans/create"
                                 render={props => <PlanFormList {...props} />}
                             />
-                            <Route
-                                exact
-                                path="/orders"
-                                render={props => <Order {...props} />}
-                            />                
+                                     
                             <Route
                                 exact
                                 path="/plans/editPlans/:planId(\d+)"

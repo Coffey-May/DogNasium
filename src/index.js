@@ -5,8 +5,10 @@ import DogNasium from './components/DogNasium';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 ReactDOM.render(
 <Router>
+     
      <DogNasium /> 
 </Router>,
  document.getElementById('root'));

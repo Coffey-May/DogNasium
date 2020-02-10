@@ -18,12 +18,13 @@ body{
 }
 
 .learnMoreBtn{
+    display: inline-block;
     text-align: center; 
     width:100vw;
-    background-color:rgba(0, 0, 0, 0.536);
-    margin-top:45vh;
-    width:15vw;
-    margin-Left:45vw;
+    background-color:#00000089;
+    margin-top:70vh;
+    width:20vw;
+    margin-Left:40vw;
     border-radius: 15%;
     transform: scale();
     transition: all 0.5s ;
@@ -36,6 +37,8 @@ body{
     transform: scale(2);
     background-color: rgba(0, 0, 0, 0.571);
     transition: all 0.5s;
+    text-decoration: none;
+    color:white;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
     animation: circle 1s linear forwards;
@@ -47,6 +50,8 @@ body{
 }
 .titleHole{
     width:100vw;
+    height:50vh;
+    overflow: scroll;
 }
 
 .PurchaseOptionsBtn{
@@ -70,6 +75,8 @@ body{
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
     animation: circle 1s linear forwards;
+    color:white;
+    text-decoration: none;
 }
 .btnHolder{
     display: flex;
@@ -106,26 +113,36 @@ body{
 }
 
 .mainHome{
-    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.76),rgba(255, 237, 159, 0.488),rgba(19, 19, 19, 0.795)),url('./dogchurchdog.jpg'),url('./dogchurchdog.jpg');
+    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.262),rgba(247, 216, 185, 0.247),rgba(19, 19, 19, 0.171)),url('./dogchurchdog.jpg'),url('./dogchurchdog.jpg');
     width: 100vw;
     height:100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    /* width:94vw;
-    margin-left: 3vw;
-    margin-right: 3vw; */
     justify-content: space-around;
+    transition: all 1.5s;
+    
+}
+.mainHome:hover{
+    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.899),rgba(49, 45, 25, 0.728),rgba(19, 19, 19, 0.886)),url('./dogchurchdog.jpg'),url('./dogchurchdog.jpg');
+    width: 100vw;
+    height:100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-around;
+    transition: all 1.5s;
+    
 }
 .Title::before{
     bottom:0;
     content:"";
-    height:00%;
+    height:100%;
     left:0; 
     position: absolute;
     right:0;
-    top:122vh;
+    width:78vw;
+    top:138vh;
     display: block;
     margin:0 auto;
  
@@ -135,9 +152,10 @@ body{
     background-image:linear-gradient(to right,rgba(119, 254, 1, 0.404) ,rgba(250, 1, 38, 0.31) ,rgba(186, 4, 247, 0.399)), url('./dogChurch2.png');
     background-size: cover;
     transform-origin:  center center 0;
-    transform: translateZ(-1px) scale(2.6);
+    transform: translateZ(-1px) scale(3.3);
     z-index: -2;
     min-height: 100vh;
+    
 
 
 }
@@ -154,7 +172,7 @@ body{
 .homePageThree{
     background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.575),rgba(255, 237, 159, 0.488),rgba(19, 19, 19, 0.568)),url('./dogrunning.jpg');
     width: 100vw;
-    height:100vh;
+    height:125vh;
     margin-top:60vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -162,8 +180,24 @@ body{
     justify-content: space-around;
 }
 .copyR{
-    margin-top:42vh;
+    display: flex;
+    flex-direction: row;
+    margin-top:45vh;
     color:white;
+   
+}
+.copyFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.fbvect{
+    background-image: url('./fbvect.png');
+    background-size: contain;
+    margin-top: 45vh;
+   
+    width:30px;
+    height:30px;
 }
 
 .dogSpan, .dogSpan2{
@@ -213,6 +247,7 @@ width:100%;
   animation-iteration-count: 0; 
   animation-fill-mode: forwards; 
   animation: circle 1s linear forwards;
+  
  
   
   
@@ -239,6 +274,7 @@ animation-fill-mode: forwards;
 
 
 
+
    
 
 }
@@ -249,23 +285,31 @@ animation-fill-mode: forwards;
     text-align: center;
     justify-content: space-evenly;
     color:white;
+    padding:0;
 
 }
 .desc:hover{
     opacity: 1;
     transform: scale(2);
-    background-color: rgba(0, 0, 0, 0.747);
+    background-color: rgba(0, 0, 0, 0.89);
     transition: all 0.5s;
+    color:white;
+  
+    /* height:10vh; */
+  
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
     animation: circle 1s linear forwards;
+    z-index: 1;
 }
 .desc{
     /* width:25vw; */
     background-color: rgba(255, 255, 255, 0.555);
-    margin-top: 50vh;
+    margin-top: 30vh;
     opacity: 0.5;
-    color:white;
+    height:20vh;
+    
+    color:rgb(0, 0, 0);
     transform: scale();
     transition: all 0.5s ;
     animation-duration: 4s;
@@ -278,3 +322,26 @@ width:0;
 transform-style: preserve-3d;
 
 } */
+
+.li {
+    font-size: xx-small;
+    list-style-type: none;
+}  
+.unOrdered{
+    padding: 0;
+    margin: 0 auto;
+    justify-content: left;
+}
+/* .checkOut{
+   height:5vh;
+} */
+
+.packages{
+    display: flex;
+    margin-top:40vh;
+    flex-direction: row;
+    justify-content: center;
+    color:white;
+    
+    
+}

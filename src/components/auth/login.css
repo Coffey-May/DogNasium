@@ -17,19 +17,22 @@ fieldset{
 }
 .login_header{
     /* width:94vw; */
-    padding-top:10vh;
+    /* padding-top:3.5vh; */
     text-align: center;
     /* letter-spacing: .5vw; */
-    font-weight: 900;
+    /* font-weight: 900; */
     color:rgb(255, 255, 255);
     margin:0 auto;
-    letter-spacing: 3vw;
-    font-size: 10vw;
+    letter-spacing: 2vw;
+    font-size: 7vw;
+   margin-top: -3vh;
+   line-height: 9vh;
   
 }
 
 .logForm{
     justify-content: space-around;
+   
 }
 a{
     /* color:white; */
@@ -49,13 +52,14 @@ a:hover, a:active { text-decoration: none; color:rgb(255, 255, 255) }
 .container--login{
 
  background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.76),rgba(211, 196, 132, 0.671),rgba(19, 19, 19, 0.712)),url('./dogNasiumPic1.jpg');
- height: 100vh;
- background-position: center;
- background-repeat: no-repeat;
+ /* height: 100vh; */
+ /* background-position: center; */
+ /* background-repeat: no-repeat; */
  background-size: cover;
- /* width:94vw;
- margin-left: 3vw;
- margin-right: 3vw; */
+  width:100vw;
+
+ /* margin-left: 3vw;
+ margin-right: 3vw;  */
  justify-content: space-around;
  
 
@@ -94,15 +98,17 @@ main{
 #password, #email{
     width:35vw;
     display: inline-block;
-    text-align: center;
+   font-weight: bolder;
+    /* text-align: center; */
+    color: rgba(126, 126, 126, 0.461);
     
 }
 
 #userNameRegister, #userEmailRegister, #userPasswordRegister{
     width:35vw;
     display: inline-block;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.493);
+    /* text-align: center; */
+   color: rgba(255, 255, 255, 0.493);
 }
 .registerSpan{
     color:rgb(6, 6, 6);

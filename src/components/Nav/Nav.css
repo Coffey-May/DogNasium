@@ -2,7 +2,7 @@
 .navbar {
      display: flex;
     justify-content: space-evenly;  
-    background-color:rgba(0, 0, 0, 0.776);
+    background-color:rgb(0, 0, 0);
     text-align: center;
     margin:0 auto;
     height:8vh; 

@@ -1,9 +1,16 @@
-.orderList{
-    padding-top:8vh;
+
+.backGroundOrderList{
     background-image:linear-gradient(to right,rgba(74, 28, 28, 0.728),rgba(250, 250, 250, 0.125),rgba(68, 33, 33, 0.651)), url("dogHusky.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height:100vh;
+     height:100vh;
+}
+.orderList, .container{
+    padding-top:8vh;
+
+   margin:0 auto;
+  
+    width:130vw;
 }
 
 .btn--edit{
@@ -16,9 +23,14 @@
     color: white;
 }
 .addPlanBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
     border-radius: 30%;
     background-color: rgb(74, 71, 255);
     color: white;
+    width:20vw;
 }
 .orderListHeader{
     display: flex;

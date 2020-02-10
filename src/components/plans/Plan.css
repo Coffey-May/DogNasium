@@ -14,7 +14,7 @@
     width:30vw;
     text-align: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(147, 146, 146);
+    background-color: rgba(44, 43, 43, 0.6);
 
 }
 .planTitle{
@@ -44,17 +44,23 @@
     text-align: center;
     border:1px solid black;
     display: flex;
+    /* width:100vw; */
     flex-direction: row;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('./dogNose.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     /* padding-top:15vh; */
 }
 .planTypeHeader{
     text-align: center;
+    color:white;
 }
 
 .optionals{
     margin:0 auto;
     font-size: larger;
+    color:white;
    
 }
 .planListHeader{
@@ -63,4 +69,9 @@
 }
 label{
     font-size: smaller;
+    color:white;
+}
+.order{
+    display: flex;
+    flex-direction: row;
 }

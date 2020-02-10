@@ -7,8 +7,11 @@ import { OptionContext } from "../options/OptionProvider"
 import { OrderContext } from "../orders/OrderProvider"
 import Order from "../orders/OrderList"
 
+
 import "../orders/Order"
-export default ({ onePlan, props }) => {
+
+
+export default ({ onePlan, props,op }) => {
   // const history = createBrowserHistory();
   // const { addPlan, plans, updatePlan } = useContext(PlanContext);
   const { options } = useContext(OptionContext)
@@ -25,6 +28,8 @@ export default ({ onePlan, props }) => {
 
   // const option = useRef("")
   // const editMode = props.match.params.hasOwnProperty('orderId');
+
+ 
 
   const handleControlledInputChange = (event) => {
     const newOrder = Object.assign({}, order);
@@ -60,6 +65,7 @@ export default ({ onePlan, props }) => {
     //     }).then(() => props.history.push('/orders'));
     //   } else {
     //   console.log(orders)
+  
     addOrder({
 
       orderType: onePlan.planName,
@@ -73,9 +79,11 @@ export default ({ onePlan, props }) => {
       userId: parseInt(localStorage.getItem('dognasium_user')),
       
     })
+   
       .then
       (() =>
         props.history.push('/orders'));
+        
   };
 
   return (
@@ -162,12 +170,12 @@ export default ({ onePlan, props }) => {
             </div>
           </fieldset>
           <button
-            type="submit"
+            type="submit" 
             onClick={(evt) => {
            
               evt.preventDefault();
               constructNewOrder()
-              
+            
 
             }}
             className="btn btn-primary"

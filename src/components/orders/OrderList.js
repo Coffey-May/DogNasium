@@ -6,16 +6,20 @@ import React, { useContext } from 'react';
 // import { UserContext } from '../auth/UserProvider';
 import {OrderContext} from "./OrderProvider"
 import Order from './Order';
+
 import './Order.css';
+// import { PlanContext } from '../plans/PlanProvider';
 
 export default (props) => {
 	const { orders } = useContext(OrderContext);
+	// cont{plans} = useContext(PlanContext)
 	// // const { locations } = useContext(LocationContext);
 	// const { users } = useContext(UserContext);
 
 	return (
 <>
-<div className="orderList">
+<div className="backGroundOrderList">
+<div className="orderList container">
 		<h1 className="orderListHeader">ORDER</h1>
         <button className="addPlanBtn" onClick={() => props.history.push("/plans/create")}>
             View order options
@@ -27,6 +31,7 @@ export default (props) => {
 })}
 		</div>
         </div>
+		</div>
 		</>
 	);
 };

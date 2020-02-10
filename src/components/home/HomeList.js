@@ -16,7 +16,7 @@ export default (props) => {
         <div className="homeWrap2">
           <main className="mainHome ">
 
-            <div className="Title">
+            <div  className="Title"><h1  className="welcome"> </h1>
               <div className="pageOneWrap">
                 <div className="infoHover">
                   <h1><span className="dogSpan">
@@ -38,68 +38,48 @@ export default (props) => {
                 </div>
                 <div className="titleHole">Welcome to Dog-Nasium.
                 The Worlds first of its kind indoor dog park.
-                Housed inside of an 80,000 square foot dome,
+                Housed inside of an 80,000 square foot geodesic dome,
                 Dog-Nasium offers a variety of amenities to dog owners of all kinds.
            </div>
               </div>
             </div>
 
           </main>
-
-          {/* var textWrapper = document.querySelector('.dogSpan');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: true})
-  .add({
-    targets: '.dogSpan .letter',
-    translateX: 0,
-    translateZ: [100,0],
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 7000,
-    delay: (el, i) => 10 + 30 * i
-  }).add({
-    targets: '.dogSpan .letter',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 0,
-    delay: (el, i) => 10000000 + 30 * i
-  });
-
-  var textWrapper = document.querySelector('.dogSpan2');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: true})
-  .add({
-    targets: '.dogSpan2 .letter',
-    translateX: [-500,0],
-    translateZ: [300,0],
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 7000,
-    delay: (el, i) => 10 + 30 * i
-  }).add({
-    targets: '.dogSpan2 .letter',
-    translateX: [0,-30],
-    opacity: [1,0],
-    easing: "easeInExpo",
-    duration: 0,
-    delay: (el, i) => 1000000 + 30 * i
-  )}; */}
+          
 
           <section className="homePageTwo container">
+        <h1 className="packages">PACKAGE PLANS</h1>
             <div className="descriptions container">
+
               <div className="desc"><h1>Puppy Plan</h1>
                 <h5>
-                  <ul>
-                    <li>a</li>
-                    <li>a</li>
-                    <li>a</li>
+                  <ul className="unOrdered  ">
+                    <li className="li">For $19.99  get all access to our <br/> 24 hour park for 30 days.</li>
+                    <li className="li">Add 50% off all cafe purchases <br/>for an additional $9.99</li>
+                    <li className="li">Add 50% off all restaurant items, <br/>alcohol not included, for an additional $19.99</li>
+                    <li className="li">Add 50% offall pet store purchases <br/>for an additional $19.99</li>
+                  </ul>
+                </h5>
+                </div>
+              <div className="desc"><h1>Doggo Plan</h1>
+              <h5>
+                  <ul className="unOrdered  ">
+                    <li className="li">For $79.99  get all access to our <br/> 24 hour park for 182 days.</li>
+                    <li className="li">Add 50% off all cafe purchases <br/>for an additional $29.99</li>
+                    <li className="li">Add 50% off all restaurant items, <br/>alcohol not included, for an additional $49.99</li>
+                    <li className="li">Add 50% offall pet store purchases <br/>for an additional $49.99</li>
+                  </ul>
+                </h5>
+                </div>
+              <div className="desc"><h1>Wolf Plan</h1>
+              <h5>
+                  <ul className="unOrdered  ">
+                    <li className="li">For $149.99  get all access to our <br/> 24 hour park for 365 days.</li>
+                    <li className="li">Add 50% off all cafe purchases <br/>for an additional $49.99</li>
+                    <li className="li">Add 50% off all restaurant items, <br/>alcohol not included, for an additional $79.99</li>
+                    <li className="li">Add 50% offall pet store purchases <br/>for an additional $79.99</li>
                   </ul>
                 </h5></div>
-              <div className="desc"><h1>Doggo Plan</h1></div>
-              <div className="desc"><h1>Wolf Plan</h1></div>
             </div>
             <div className="btnHolder">
               <button className="PurchaseOptionsBtn">
@@ -145,7 +125,10 @@ anime.timeline({loop: true})
                 to="/Login"
               >Learn<br />More</Link> */}
             </button>
-            <h4 className="copyR">Ⓒ<i>Coffeyright 2020</i></h4>
+            <div className="copyFlex">
+              <div>
+            <h4 className="copyR">Ⓒ<i>Coffeyright 2020</i></h4></div><div className="fbvect"></div>
+            </div>
           </section>
         </div>
       </div>

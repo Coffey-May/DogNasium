@@ -10,7 +10,7 @@ export default ({ order, history, option,}) => {
     const { releaseOption, updateOptions, } = useContext(OptionContext)
     // const { releaseOption } = useContext(OptionContext)
     return( 
-    <section className="order">
+    <section className="order container">
         <h3 className="order__name">
            <div className="order_name">Congratulations, You have chosen the{order.orderType}</div>
            <div className="order_name">Plan creation date: {new Date(order.dateTime).toLocaleDateString('en-US')}</div>

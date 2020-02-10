@@ -60,7 +60,7 @@ localStorage.getItem("dognasium_user")
                             onClick={e => {
                                 e.preventDefault()
                                 localStorage.removeItem("dognasium_user")
-                                props.history.push("/Home")
+                                props.history.push("/Login")
                             }}
                         >Logout</Link>
                     </li>

@@ -41,7 +41,7 @@ const Login = props => {
     return (
         <main className="container--login" >
              {/* <img src={require('../images/dogNasiumPic1.jpg')} />   */}
-             <h1 className="login_header">D O G<br/> N A S I U M</h1>
+             <h1 className="login_header"><br/>D O G<br/> N A S I U M</h1>
             <section className="logForm">
                 <form className="form--login" onSubmit={handleLogin}>
                     
