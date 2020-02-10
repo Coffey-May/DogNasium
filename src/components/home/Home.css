@@ -1,0 +1,347 @@
+html {
+    height:100%;
+    overflow: hidden;
+    margin:0 auto;
+    padding: 0;
+}
+body{
+ 
+    margin:0;
+    padding:0;
+    perspective:1px;
+    transform-style: preserve-3d;
+    height:100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.learnMoreBtn{
+    display: inline-block;
+    text-align: center; 
+    width:100vw;
+    background-color:#00000089;
+    margin-top:70vh;
+    width:20vw;
+    margin-Left:40vw;
+    border-radius: 15%;
+    transform: scale();
+    transition: all 0.5s ;
+    animation-duration: 4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+.learnMoreBtn:hover{
+    opacity: 1;
+    transform: scale(2);
+    background-color: rgba(0, 0, 0, 0.571);
+    transition: all 0.5s;
+    text-decoration: none;
+    color:white;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+}
+.dogSpan .dogspan2{
+  
+   text-align: center;
+   
+}
+.titleHole{
+    width:100vw;
+    height:50vh;
+    overflow: scroll;
+}
+
+.PurchaseOptionsBtn{
+    display: inline-block;
+   
+    background-color: rgba(0, 0, 0, 0.466);
+    margin-top:15vh;
+
+    border-radius: 15%;
+    transform: scale();
+    transition: all 0.5s ;
+    animation-duration: 4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+.PurchaseOptionsBtn:hover{
+    opacity: 1;
+    transform: scale(2);
+    background-color: rgba(0, 0, 0, 0.571);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+    color:white;
+    text-decoration: none;
+}
+.btnHolder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.Title{
+    box-sizing: border-box;
+    min-height: 100vh;
+    /* padding:20vw; */
+    position: relative;
+    transform-style:inherit;
+    width:100vw;
+    border-radius: 50%;
+    
+    
+
+    text-align: center;
+    padding-top: 15vh;  
+    /* font-weight: 900; */
+    color:black;
+    margin:0 auto;
+    letter-spacing: 2rem;
+    color: white;
+     font-weight: lighter;
+     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+}
+
+.Title, .Title:before{
+    background: 50% 50% / cover;
+  
+}
+
+.mainHome{
+    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.262),rgba(247, 216, 185, 0.247),rgba(19, 19, 19, 0.171)),url('./dogchurchdog.jpg'),url('./dogchurchdog.jpg');
+    width: 100vw;
+    height:100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-around;
+    transition: all 1.5s;
+    
+}
+.mainHome:hover{
+    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.899),rgba(49, 45, 25, 0.728),rgba(19, 19, 19, 0.886)),url('./dogchurchdog.jpg'),url('./dogchurchdog.jpg');
+    width: 100vw;
+    height:100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-around;
+    transition: all 1.5s;
+    
+}
+.Title::before{
+    bottom:0;
+    content:"";
+    height:100%;
+    left:0; 
+    position: absolute;
+    right:0;
+    width:78vw;
+    top:138vh;
+    display: block;
+    margin:0 auto;
+ 
+   
+
+   
+    background-image:linear-gradient(to right,rgba(119, 254, 1, 0.404) ,rgba(250, 1, 38, 0.31) ,rgba(186, 4, 247, 0.399)), url('./dogChurch2.png');
+    background-size: cover;
+    transform-origin:  center center 0;
+    transform: translateZ(-1px) scale(3.3);
+    z-index: -2;
+    min-height: 100vh;
+    
+
+
+}
+/* .homePageTwo{
+    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.575),rgba(255, 237, 159, 0.488),rgba(19, 19, 19, 0.568)),url('./dogChurch2.png');
+    width: 100vw;
+    height:100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-around;
+} */
+
+.homePageThree{
+    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.575),rgba(255, 237, 159, 0.488),rgba(19, 19, 19, 0.568)),url('./dogrunning.jpg');
+    width: 100vw;
+    height:125vh;
+    margin-top:60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: space-around;
+}
+.copyR{
+    display: flex;
+    flex-direction: row;
+    margin-top:45vh;
+    color:white;
+   
+}
+.copyFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.fbvect{
+    background-image: url('./fbvect.png');
+    background-size: contain;
+    margin-top: 45vh;
+   
+    width:30px;
+    height:30px;
+}
+
+.dogSpan, .dogSpan2{
+font-size: 8vw;
+display: inline-block;
+text-align: center;
+width:100%;
+
+
+
+}
+.infoHover{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+}
+/* .Title:hover{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+
+} */
+
+/* flex-basis: 10%; */
+/* 
+.pageOneWrap:hover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -50px;
+    height: 50px;
+    width: 00%;
+  
+    box-sizing: border-box;
+   
+} */
+.pageOneWrap:hover, .pageOneWrap:hover{
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s;
+  animation-iteration-count: 0; 
+  animation-fill-mode: forwards; 
+  animation: circle 1s linear forwards;
+  
+ 
+  
+  
+}
+.pageOneWrap{
+    letter-spacing: 0.3vw;
+   
+    font-size: xx-large;
+    font-weight: 400;
+    width:100vw;
+    box-sizing: border-box  ;
+   
+    
+    /* height:40vh; */
+    display: inline-block;
+    text-align: center;
+    overflow:hidden;
+    opacity: 0;
+transform: scale(2);
+transition: all 0.5s ;
+animation-duration: 4s;
+animation-iteration-count: 1; 
+animation-fill-mode: forwards; 
+
+
+
+
+   
+
+}
+
+.descriptions{
+        display: flex;
+        flex-direction: row;
+    text-align: center;
+    justify-content: space-evenly;
+    color:white;
+    padding:0;
+
+}
+.desc:hover{
+    opacity: 1;
+    transform: scale(2);
+    background-color: rgba(0, 0, 0, 0.89);
+    transition: all 0.5s;
+    color:white;
+  
+    /* height:10vh; */
+  
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
+    z-index: 1;
+}
+.desc{
+    /* width:25vw; */
+    background-color: rgba(255, 255, 255, 0.555);
+    margin-top: 30vh;
+    opacity: 0.5;
+    height:20vh;
+    
+    color:rgb(0, 0, 0);
+    transform: scale();
+    transition: all 0.5s ;
+    animation-duration: 4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+
+/* .titleHole:after{
+width:0;
+transform-style: preserve-3d;
+
+} */
+
+.li {
+    font-size: xx-small;
+    list-style-type: none;
+}  
+.unOrdered{
+    padding: 0;
+    margin: 0 auto;
+    justify-content: left;
+}
+/* .checkOut{
+   height:5vh;
+} */
+
+.packages{
+    display: flex;
+    margin-top:40vh;
+    flex-direction: row;
+    justify-content: center;
+    color:white;
+    
+    
+}
