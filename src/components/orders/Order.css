@@ -12,7 +12,11 @@
   
     width:130vw;
 }
-
+.order{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 .btn--edit{
   border-radius: 30%;
   background-color: yellow;

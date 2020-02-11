@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 
 // import Event from "./Event";
@@ -14,9 +14,11 @@ export default (props) => {
     <>
       <div className="homeWrap">
         <div className="homeWrap2">
+          
           <main className="mainHome ">
-
+         
             <div  className="Title"><h1  className="welcome"> </h1>
+            <h2 className="test">🐶</h2>
               <div className="pageOneWrap">
                 <div className="infoHover">
                   <h1><span className="dogSpan">

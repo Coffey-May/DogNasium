@@ -39,7 +39,10 @@ export const OrderProvider = (props) => {
             },
             body: JSON.stringify(order)
         })
-            .then(getOrders)
+            .then((parsedNewOrder) => {
+                getOrders()
+                return parsedNewOrder
+            })
     }
 
     const releaseOrder = order => {

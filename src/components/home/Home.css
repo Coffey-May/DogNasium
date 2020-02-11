@@ -92,9 +92,6 @@ body{
     transform-style:inherit;
     width:100vw;
     border-radius: 50%;
-    
-    
-
     text-align: center;
     padding-top: 15vh;  
     /* font-weight: 900; */
@@ -120,9 +117,19 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: space-around;
-    transition: all 1.5s;
+    /* transition: all 1.5s; */
+    
     
 }
+.test{
+    transform-origin:  center center 0;
+    transform: translateZ(-1px) scale(5.3);
+    z-index: -1;
+    margin-left:120vw;
+    opacity: 0.4;
+  
+}
+
 .mainHome:hover{
     background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.899),rgba(49, 45, 25, 0.728),rgba(19, 19, 19, 0.886)),url('./dogchurchdog.jpg'),url('./dogchurchdog.jpg');
     width: 100vw;
@@ -132,6 +139,7 @@ body{
     background-size: cover;
     justify-content: space-around;
     transition: all 1.5s;
+    
     
 }
 .Title::before{
@@ -145,10 +153,6 @@ body{
     top:138vh;
     display: block;
     margin:0 auto;
- 
-   
-
-   
     background-image:linear-gradient(to right,rgba(119, 254, 1, 0.404) ,rgba(250, 1, 38, 0.31) ,rgba(186, 4, 247, 0.399)), url('./dogChurch2.png');
     background-size: cover;
     transform-origin:  center center 0;
@@ -282,6 +286,7 @@ animation-fill-mode: forwards;
 .descriptions{
         display: flex;
         flex-direction: row;
+       
     text-align: center;
     justify-content: space-evenly;
     color:white;
@@ -304,10 +309,14 @@ animation-fill-mode: forwards;
 }
 .desc{
     /* width:25vw; */
+    display:flex;
+    flex-direction: column;
+    
     background-color: rgba(255, 255, 255, 0.555);
-    margin-top: 30vh;
+    margin-top: 20vh;
     opacity: 0.5;
-    height:20vh;
+    height:40vh;
+    padding: 0;
     
     color:rgb(0, 0, 0);
     transform: scale();
@@ -326,6 +335,7 @@ transform-style: preserve-3d;
 .li {
     font-size: xx-small;
     list-style-type: none;
+
 }  
 .unOrdered{
     padding: 0;
@@ -338,7 +348,7 @@ transform-style: preserve-3d;
 
 .packages{
     display: flex;
-    margin-top:40vh;
+    margin-top:20vh;
     flex-direction: row;
     justify-content: center;
     color:white;

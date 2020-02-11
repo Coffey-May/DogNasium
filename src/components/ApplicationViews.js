@@ -7,6 +7,7 @@ import { UserProvider } from "./auth/UserProvider";
 import { PlanProvider } from "./plans/PlanProvider";
 import { OrderProvider } from "./orders/OrderProvider";
 import { OptionProvider } from "./options/OptionProvider";
+import {OrderOptionProvider} from "./orderOptions/OrderOptionProvider"
 import PlanList from "./plans/PlanList";
 import PlanForm from "./plans/PlanForm";
 import Order from "./orders/OrderList";
@@ -24,6 +25,7 @@ export default props => {
         <>
 
             {/* <ParallaxProvider> */}
+            <OrderOptionProvider>
             <UserProvider>
                 <OptionProvider>
                     <PlanProvider>
@@ -58,6 +60,7 @@ export default props => {
                     </PlanProvider>
                 </OptionProvider>
             </UserProvider>
+            </OrderOptionProvider>
             {/* </ParallaxProvider> */}
         </>
     );

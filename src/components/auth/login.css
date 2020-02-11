@@ -13,7 +13,9 @@
 
 fieldset{
     border:none;
-    font-weight: 900;
+  
+
+    font-weight: 10;
 }
 .login_header{
     /* width:94vw; */
@@ -76,7 +78,8 @@ a:hover, a:active { text-decoration: none; color:rgb(255, 255, 255) }
 }
 .logReg{
     color:white;
-    font-size: xx-large;
+    font-size: 3vh;
+  
 }
 .signInBtn{
  border-radius: 20%;
@@ -85,7 +88,7 @@ a:hover, a:active { text-decoration: none; color:rgb(255, 255, 255) }
  width:15vw;
 }
 main{
-    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.575),rgba(255, 237, 159, 0.488),rgba(19, 19, 19, 0.568)),url('./dogNasiumPic1.jpg');
+    background-image: linear-gradient(to right ,rgba(11, 11, 11, 0.591),rgba(255, 237, 159, 0.509),rgba(19, 19, 19, 0.714)),url('./dogNasiumPic1.jpg');
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,31 +103,37 @@ main{
     display: inline-block;
    font-weight: bolder;
     /* text-align: center; */
-    color: rgba(126, 126, 126, 0.461);
+    color: rgb(255, 255, 255);
+    background-color: transparent;
     
 }
+
 
 #userNameRegister, #userEmailRegister, #userPasswordRegister{
     width:35vw;
     display: inline-block;
+    background: transparent;
     /* text-align: center; */
-   color: rgba(255, 255, 255, 0.493);
+   color: rgb(255, 255, 255);
 }
 .registerSpan{
-    color:rgb(6, 6, 6);
-    font-weight: 500;
+    color:white;
+    font-weight: 200;
     letter-spacing: 1vw;
-    font-size: 7vw;
-    line-height: .5vh;
+    font-size: 4vw;
+    line-height: 2vh; 
+     margin-top: -2vh;
 }
 .registerHeader {
-    /* color:white; */
-    /* font-size: xx-large; */
-    font-weight:900;
-    color:black;
-    margin:0 auto;
+  
+  
+    font-weight:50;
+    color:rgb(255, 255, 255);
+  
     letter-spacing: 2vw;
     width:40vw;
-    font-size: 8vw;
+    font-size: 4vw;
+    height:2vh;
+    
 
 }
