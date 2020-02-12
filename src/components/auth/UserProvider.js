@@ -44,7 +44,7 @@ export const UserProvider = (props) => {
     useEffect(
         () => {
        
-            console.log(users)
+            // console.log(users)
         },
         [users])
 

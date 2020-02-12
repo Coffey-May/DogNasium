@@ -60,7 +60,7 @@ export const OptionProvider = (props) => {
 
     useEffect(() => {
        
-        console.log( options)
+        // console.log( options)
     }, [options])
 
     return (

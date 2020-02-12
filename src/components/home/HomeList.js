@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 
 // import Event from "./Event";
@@ -14,9 +14,11 @@ export default (props) => {
     <>
       <div className="homeWrap">
         <div className="homeWrap2">
+          
           <main className="mainHome ">
-
+         
             <div  className="Title"><h1  className="welcome"> </h1>
+            {/* <h2 className="test"><span role="img">🐶</span></h2> */}
               <div className="pageOneWrap">
                 <div className="infoHover">
                   <h1><span className="dogSpan">
@@ -57,8 +59,23 @@ export default (props) => {
                     <li className="li">For $19.99  get all access to our <br/> 24 hour park for 30 days.</li>
                     <li className="li">Add 50% off all cafe purchases <br/>for an additional $9.99</li>
                     <li className="li">Add 50% off all restaurant items, <br/>alcohol not included, for an additional $19.99</li>
-                    <li className="li">Add 50% offall pet store purchases <br/>for an additional $19.99</li>
+                    <li className="li">Add 50% off all pet store purchases <br/>for an additional $19.99</li>
                   </ul>
+                  <button className="PurchaseOptionsBtn">
+                  {
+                  localStorage.getItem("dognasium_user")
+                    ?
+                    <Link className="navbar__link"
+                      to="/plans/create"
+                    >View Purchase options</Link>
+                    :
+                    <Link className="navbar__link"
+                      to="/Login"
+                    ><i>Please login <br />
+                        to view<br />
+                        purchase
+                      options</i></Link>}
+                  </button>
                 </h5>
                 </div>
               <div className="desc"><h1>Doggo Plan</h1>
@@ -69,6 +86,21 @@ export default (props) => {
                     <li className="li">Add 50% off all restaurant items, <br/>alcohol not included, for an additional $49.99</li>
                     <li className="li">Add 50% offall pet store purchases <br/>for an additional $49.99</li>
                   </ul>
+                  <button className="PurchaseOptionsBtn">
+                  {
+                  localStorage.getItem("dognasium_user")
+                    ?
+                    <Link className="navbar__link"
+                      to="/plans/create"
+                    >View Purchase options</Link>
+                    :
+                    <Link className="navbar__link"
+                      to="/Login"
+                    ><i>Please login <br />
+                        to view<br />
+                        purchase
+                      options</i></Link>}
+                  </button>
                 </h5>
                 </div>
               <div className="desc"><h1>Wolf Plan</h1>
@@ -79,10 +111,25 @@ export default (props) => {
                     <li className="li">Add 50% off all restaurant items, <br/>alcohol not included, for an additional $79.99</li>
                     <li className="li">Add 50% offall pet store purchases <br/>for an additional $79.99</li>
                   </ul>
+                  <button className="PurchaseOptionsBtn">
+                  {
+                  localStorage.getItem("dognasium_user")
+                    ?
+                    <Link className="navbar__link"
+                      to="/plans/create"
+                    >View Purchase options</Link>
+                    :
+                    <Link className="navbar__link"
+                      to="/Login"
+                    ><i>Please login <br />
+                        to view<br />
+                        purchase
+                      options</i></Link>}
+                  </button>
                 </h5></div>
             </div>
             <div className="btnHolder">
-              <button className="PurchaseOptionsBtn">
+              {/* <button className="PurchaseOptionsBtn">
                 {
                   localStorage.getItem("dognasium_user")
                     ?
@@ -96,7 +143,7 @@ export default (props) => {
                         to view<br />
                         purchase
                       options</i></Link>}
-              </button>
+              </button> */}
             </div>
           </section>
 

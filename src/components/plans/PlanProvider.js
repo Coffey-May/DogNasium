@@ -60,7 +60,7 @@ export const PlanProvider = (props) => {
 
     useEffect(() => {
         // console.log("****  Plan APPLICATION STATE CHANGED  ****")
-        console.log( plans)
+        // console.log( plans)
     }, [plans])
 
     return (

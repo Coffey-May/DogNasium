@@ -1,46 +1,63 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
-// import { createBrowserHistory } from "history";
-import { PlanContext } from './PlanProvider';
-import { UserContext } from "../auth/UserProvider"
+import React, { useContext, useState, useEffect } from 'react';
 import { OptionContext } from "../options/OptionProvider"
+import { OrderOptionContext } from "../orderOptions/OrderOptionProvider"
 import { OrderContext } from "../orders/OrderProvider"
-import Order from "../orders/OrderList"
+import Option from "../options/Option"
 
+export default ({ onePlan, history,match }) => {
 
-import "../orders/Order"
-
-
-export default ({ onePlan, props,op }) => {
-  // const history = createBrowserHistory();
-  // const { addPlan, plans, updatePlan } = useContext(PlanContext);
   const { options } = useContext(OptionContext)
-  const { orders, addOrder, updateOrder } = useContext(OrderContext);
-  // const { addOption, options, updateOption } = useContext(OptionContext);
+  const { addOrder, getOrders,updateOrders,orders } = useContext(OrderContext);
+  const { addOrderOption, updateOrderOptions } = useContext(OrderOptionContext);
+
   const [option, setOption] = useState({});
+  const [OrderOption, setOrderOption] = useState([]);
   const [order, setOrder] = useState({});
   const [plan, setPlan] = useState({})
-  const planName = useRef("")
-  const optionType = useRef("")
-  const planETA = useRef("")
-  const donate = useRef("")
+  const editMode = match.params.hasOwnProperty("orderId")
+  // const donate = useRef("")
+
+  const chosenOption = (ev) => {
+    if (ev.target.checked === true) {
+      const oldIds = OrderOption.slice()
+      const chosenId = ev.target.value
+      oldIds.push(chosenId)
+      setOrderOption(oldIds)
+      //what is the id of checkbox that was checked
+      //is this id in order options
+    } else if (ev.target.checked === false) {
+      const oldIds = OrderOption.slice()
+      const chosenId = oldIds.findIndex()
+      oldIds.splice(chosenId, 1)
+      setOrderOption(oldIds)
+    }
+  }
+
+  const checked = () => {
+ 
+    return  options.map((o)=>{
+       console.log(o.id, "o.id")
+       console.log(OrderOption.option.id, "OO.id")
+     if ( o.id === OrderOption.option.id){
+   return true
+   }else{
+     return false
+   }
+   })
+   }
+
   // const planCompletion = useRef("")
 
   // const option = useRef("")
   // const editMode = props.match.params.hasOwnProperty('orderId');
-
- 
-
   const handleControlledInputChange = (event) => {
     const newOrder = Object.assign({}, order);
     newOrder[event.target.name] = event.target.value;
     setOrder(newOrder);
-   
   };
-
   // const setDefaults = () => {
   //   if (editMode) {
-  //     const orderId = parseInt(props.match.params.orderId);
+  //     const orderId = parseInt(match.params.orderId);
   //     const selectedOrder = orders.find((o) => o.id === orderId) || {};
   //     setOrder(selectedOrder);
   //   }
@@ -52,136 +69,127 @@ export default ({ onePlan, props,op }) => {
   //   },
   //   [orders]
   // );
-  
-
+ 
   const constructNewOrder = () => {
-    //   if (editMode) {
-    //     updateOrder({
-    //       id: order.id,
-    //       userId: order.userId,
-    //       orderType: order.orderType,
-
-    //       orderETA: Date.now()
-    //     }).then(() => props.history.push('/orders'));
-    //   } else {
-    //   console.log(orders)
-  
-    addOrder({
-
+    
+    if (editMode) {
+      updateOrders({
       orderType: onePlan.planName,
-      option: option.option,
-      option: option.option,
-      option: option.option,
       length: onePlan.length,
       price: onePlan.price,
-      donate: onePlan.donate,
+      donate: order.donate,
+      option: option.optionType,
       dateTime: Date.now(),
       userId: parseInt(localStorage.getItem('dognasium_user')),
-      
+
     })
-   
+
+      .then((response) => {
+
+        let newObjectArray = OrderOption.map(o => {
+
+          const optionObject = {
+            orderId: response.id,
+            optionId: parseInt(o),
+          }
+          return optionObject
+        })
+
+        newObjectArray.map(
+          obj => {
+            return updateOrderOptions(obj)
+          }
+        )
+      })
+  
       .then
       (() =>
-        props.history.push('/orders'));
-        
+        history.push('/orders'));
+    }
+
+    addOrder({
+      orderType: onePlan.planName,
+      length: onePlan.length,
+      price: onePlan.price,
+      donate: order.donate,
+      option: option.optionType,
+      dateTime: Date.now(),
+      userId: parseInt(localStorage.getItem('dognasium_user')),
+
+    })
+
+      .then((response) => {
+        // console.log(response, "response")
+        // console.log(response.id)
+        let newObjectArray = OrderOption.map(o => {
+
+          const optionObject = {
+            orderId: response.id,
+            optionId: parseInt(o),
+          } 
+          return optionObject
+        })
+
+        newObjectArray.map(
+          obj => {
+            return addOrderOption(obj)
+          }
+        )
+
+      })
+      .then(() => getOrders())
+      .then
+      (() =>
+        history.push('/orders'));
   };
 
   return (
     <>
       <div className="dogForms container">
         <form className="planForm">
-          {/* <h2 className="planTitle">{plan.planName}</h2> */}
+
           <h2 className="planForm__title">
-            {/* {editMode ? "" : ""} */}
+            {editMode ? "" : ""}
           </h2>
           <h3 className="planTypeHeader">{onePlan.planName}</h3>
           <fieldset>
-            <div className="form-group">
-              <label htmlFor="name">{onePlan.planName} </label>
-              <input
-                type="checkbox"
-                name="planName"
-                ref={planName}
-                required={true}
-                autoFocus
-                className="form-control"
-                proptype="varchar"
-                placeholder="Plan name"
-                defaultValue={plan.planName}
-                onChange={handleControlledInputChange}
-              />
-
-            </div>
-          </fieldset>
-          <fieldset>
             <div>
-              {
-                options.map(op => <>
-                  <h3 className="optionals">{op.optionType}</h3>
-                  <input
-                    type="checkbox"
-                    name="optionName"
-                    ref={optionType}
-                    required
-                    autoFocus
-                    className="form-control"
-                    proptype="varchar"
-                    placeholder="Option name"
-                    defaultValue={op.optionType}
-                    onChange={handleControlledInputChange}
-                  ></input> </>
-                )
-              }
-            </div><br/>
+              {options.map(option => {
+                return <Option chosenOption={chosenOption} checked={checked} key={option.id} option={option} />
+              })}
+            </div>
           </fieldset>
 
           <fieldset>
             <div className="form-group">
-              <label htmlFor="name">Plan Start Date:{onePlan.planETA} </label>
+              <label htmlFor="name">Donate to Rescue, any amount:{onePlan.donate} </label>
               <input
-                type="date"
-                name="planStartDate"
-                ref={planETA}
+                data-type="currency"
+                placeholder="$0.00"           
+                min="0.00" 
+                max="10000.00" 
+                step="5.00"
+                name="donate"
                 required
                 autoFocus
                 className="form-control"
                 proptype="varchar"
-                placeholder="Plan Start Date"
-                defaultValue={plan.planETA}
-                onChange={handleControlledInputChange}
-              />
-            </div>
-          </fieldset>
-          <fieldset>
-            <div className="form-group">
-              <label htmlFor="name">Donate to Rescue, any amount:{plan.donate} </label>
-              <input
-                type="text"
-                name="donateToRescue"
-                ref={donate}
-                required
-                autoFocus
-                className="form-control"
-                proptype="varchar"
-                placeholder="Donate"
-                defaultValue={plan.donate}
+                // placeholder="donate"
+                defaultValue={onePlan.donate}
                 onChange={handleControlledInputChange}
               />
             </div>
           </fieldset>
           <button
-            type="submit" 
+            type="submit"
             onClick={(evt) => {
-           
               evt.preventDefault();
               constructNewOrder()
-            
-
             }}
             className="btn btn-primary"
           >
             save and review
-        {/* {editMode ? 'Save Plans' : 'Make Plan'} */}
+        {editMode ? '' : ''}
           </button>{' '}
         </form>
       </div>

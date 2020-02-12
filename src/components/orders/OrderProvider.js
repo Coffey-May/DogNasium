@@ -38,8 +38,7 @@ export const OrderProvider = (props) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(order)
-        })
-            .then(getOrders)
+        }).then(res => res.json())
     }
 
     const releaseOrder = order => {
@@ -62,7 +61,7 @@ export const OrderProvider = (props) => {
 
     return (
         <OrderContext.Provider value={{
-            orders, addOrder, releaseOrder , updateOrders
+            orders, addOrder, releaseOrder , updateOrders, getOrders
         }}>
             {props.children}
         </OrderContext.Provider>
