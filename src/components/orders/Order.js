@@ -1,18 +1,18 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { OrderContext } from "./OrderProvider";
 import{ OrderOptionContext} from "../orderOptions/OrderOptionProvider"
 import OrderOptions from "../orderOptions/OrderOptions"
+// import {OptionContext} from "../options/OptionProvider"
 
 
 
 export default ({ order, history, chosenOption}) => {
   // const { releaseOrderOption, updateOrderOption, addOrderOption, } = useContext(OrderOptionContext)
     const { releaseOrder, updateOrders, } = useContext(OrderContext)
-    const { addOrderOption, releaseOrderOption, orderOptions } = useContext(OrderOptionContext);
+    // const { addOption, releaseOption, options } = useContext(OptionContext);
+    const { orderOptions } = useContext(OrderOptionContext);
 
-    console.log(orderOptions)
-    // const { releaseOption, updateOptions, } = useContext(OptionContext)
-    // const { releaseOption } = useContext(OptionContext)
+   
     return( 
     <section className="order container">
         <h3 className="order__name">
@@ -26,13 +26,13 @@ export default ({ order, history, chosenOption}) => {
     return <OrderOptions chosenOption={chosenOption} key={orderOption.id} option={orderOption}  />
             })}
              
-           <div className="option_petStore">You chose to donate{order.donate}</div>
+           <div className="option_petStore">You chose to donate ${order.donate}</div>
 
            <button className="btn--edit" onClick={() => {updateOrders(order).then(()=>{
         history.push(`/orders/editOrders/${order.id}`)});
       }}>edit</button>
       <button className="btn--delete"
-      onClick={() => {
+      onClick={() => { 
         // Code to delete animal from database
         releaseOrder(order).then(() => {
           history.push("/orders");

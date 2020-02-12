@@ -16,6 +16,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: rgba(26, 25, 25, 0.475);
+    border-radius: 20%;
 }
 .btn--edit{
   border-radius: 30%;

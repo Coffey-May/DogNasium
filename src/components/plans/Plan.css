@@ -81,3 +81,18 @@ label{
     display: flex;
     flex-direction: row;
 }
+
+
+.singlePlanPage {
+  background-image:linear-gradient(to right,rgba(29, 1, 16, 0.934),rgba(11, 254, 31, 0.007),rgba(1, 32, 7, 0.651)), url("./dogNasium4.jpg");
+  height: 100vh;
+  color:white;
+  /* width:100vw;   */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position-y: -10vw; */
+}
+.btn--editPlan, .btn--deletePlan{
+    margin-top: 10vh;
+ 
+}

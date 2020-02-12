@@ -14,7 +14,7 @@ export const OrderOptionProvider = (props) => {
     const [orderOptions, setOrderOptions] = useState([])
 
     const getOrderOptions = () => {
-        return fetch("http://localhost:8088/orderOptions")
+        return fetch("http://localhost:8088/orderOptions?_expand=option")
             .then(res => res.json())
             .then(setOrderOptions)
     }

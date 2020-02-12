@@ -1,5 +1,3 @@
-
-
 import React, { useContext } from 'react';
 import { PlanContext } from './PlanProvider';
 // import { LocationContext } from '../Location/LocationProvider';
@@ -14,14 +12,12 @@ export default (props) => {
 
 	return (
 <>
-
 		<h1 className="planListHeader"> PLANS</h1>
         <button className="addPlanBtn" onClick={() => props.history.push("/plans/create")}>
             View plan options
         </button>
 		<div className="plans">
-			
-		{plans.map(plan => {
+				{plans.map(plan => {
     return <Plan {...props} key={plan.id} plan={plan}  />
 })}
 		</div>
