@@ -10,11 +10,11 @@ import {PlanContext }from "../plans/PlanProvider"
 
 
 
-export default ({ onePlan, history, match }) => {
+export default ({ onePlan, history, match, constructNewOrder }) => {
   const { plans } = useContext(PlanContext)
   const { options } = useContext(OptionContext)
-  const { addOrder, getOrders,updateOrders,orders, releaseOrder } = useContext(OrderContext);
-  const { addOrderOption, updateOrderOptions, orderOptions } = useContext(OrderOptionContext);
+  const { addOrder, getOrders, updateOrders, orders, releaseOrder } = useContext(OrderContext);
+  const { addOrderOption, updateOrderOptions, orderOptions, releaseOrderOption } = useContext(OrderOptionContext);
 
   const [option, setOption] = useState({});
   const [OrderOption, setOrderOption] = useState([]);
@@ -56,7 +56,7 @@ let optionChecked = false
   // const planCompletion = useRef("")
 
   // const option = useRef("")
-  // const editMode = props.match.params.hasOwnProperty('orderId');
+ 
   const handleControlledInputChange = (event) => {
     const newOrder = Object.assign({}, order);
     newOrder[event.target.name] = event.target.value;
@@ -79,41 +79,43 @@ let optionChecked = false
     },
     [orders]
   );
- 
-  const constructNewOrder = () => {
-    
-      updateOrders({
-      orderType: plan.planName,
-      length: plan.length,
-      price: plan.price,
-      donate: order.donate,
-      option: option.optionType,
-      dateTime: Date.now(),
-      userId: parseInt(localStorage.getItem('dognasium_user')),
-    })
-  
-      .then((response) => {
+ const edittedOrder = () =>{
+  updateOrders({
+    id: parseInt(match.params.planId),
+    orderType: plan.planName,
+    length: plan.length,
+    price: plan.price,
+    donate: order.donate,
+    option: option.optionType,
+    dateTime: Date.now(),
+    userId: parseInt(localStorage.getItem('dognasium_user')),
 
-        let newObjectArray = OrderOption.map(o => {
+  })
 
-          const optionObject = {
-            orderId: response.id,
-            optionId: parseInt(o),
-          }
-          return optionObject
-        })
+    .then((response) => {
 
-        newObjectArray.map(
-          obj => {
-            return updateOrderOptions(obj)
-          }
-        )
+      let newObjectArray = OrderOption.map(o => {
+
+        const optionObject = {
+          orderId: response.id,
+          optionId: parseInt(o),
+        }
+        return optionObject
       })
-  
-      .then
-      (() =>
-        history.push('/orders'));
-  };
+
+      newObjectArray.forEach(
+        obj => {
+          addOrderOption(obj)
+          releaseOrderOption(obj)
+        }
+      )
+    })
+
+    .then
+    (() =>
+      history.push('/orders'));
+  }
+
 
   return (
     <>
@@ -129,6 +131,7 @@ let optionChecked = false
           <h2 className="planForm__title">
           
           </h2>
+          {editMode ? "" : ""}
           <h3 className="planTypeHeader">{order.orderType}</h3>
           <fieldset>
             <div>
@@ -162,12 +165,12 @@ let optionChecked = false
             type="submit"
             onClick={(evt) => {
               evt.preventDefault();
-              constructNewOrder()
+              edittedOrder()
             }}
             className="btn btn-primary"
           >
             save and review
-       
+            {editMode ? '' : ''}
           </button>{' '}
           <button className="btn--delete"
       onClick={() => { 

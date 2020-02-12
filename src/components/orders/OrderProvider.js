@@ -28,7 +28,7 @@ export const OrderProvider = (props) => {
             },
             body: JSON.stringify(order)
         })
-            .then(getOrders)
+            .then((res) => res.json())
     }
 
     const addOrder = order => {
