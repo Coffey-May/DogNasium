@@ -32,7 +32,8 @@ export default ({ onePlan, history, match, constructNewOrder }) => {
       setOrderOption(oldIds)
       //what is the id of checkbox that was checked
       //is this id in order options
-    } else if (ev.target.checked === false) {
+    } 
+    else if (ev.target.checked === false) {
       const oldIds = OrderOption.slice()
       const chosenId = oldIds.findIndex()
       oldIds.splice(chosenId, 1)
@@ -161,6 +162,7 @@ let optionChecked = false
               />
             </div>
           </fieldset>
+            <div>Total:${order.total}</div>
           <button
             type="submit"
             onClick={(evt) => {
@@ -176,7 +178,7 @@ let optionChecked = false
       onClick={() => { 
         // Code to delete animal from database
         releaseOrder(order).then(() => {
-          history.push("/orders");
+          history.push("/plans/create");
         });
       }}>delete</button>
         </form>
@@ -185,24 +187,3 @@ let optionChecked = false
     </>
   );
 };
-
-// export default ({ chosenOption, order}) => {
-//     const { releasePlan } = useContext(PlanContext)
-//     const { orderOptions } = useContext(OrderOptionContext);
-//     const { releaseOrder, updateOrders, } = useContext(OrderContext)
-//     // const { releaseOption } = useContext(OptionContext)
-//     const editableChosenPlan = () => {
-    
-//       //if plan id === chosen plan && orderOptions === chosenOptions
-//       //return div{planName},div{chosenoptions},div{inputted donation}
-//     }
-
-//     return( 
-//       <div className="singlePlanWrap">
-//     <section className="singlePlanPage container">
-   
-//        <h1>heloo hi howdy</h1>
-     
-             
-//     </section>
-//     </div>)}

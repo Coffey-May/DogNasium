@@ -1,12 +1,42 @@
 .planForm{
     width:25vw;
+    padding:2vw;
+   background-color: rgba(0, 0, 0, 0.192);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
-        
+    opacity: .55;
+transform: scale(1);
+transition: all 0.5s ;
+animation-duration: 4s;
+animation-iteration-count: 1; 
+animation-fill-mode: forwards; 
+}
+.planForm:hover{
+    color:white;
+    background-color: rgba(0, 0, 0, 0.432);
+    opacity: 1;
+    transform: scale(1.2);
+    transition: all 0.5s;
+    animation-iteration-count: 0; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
 }
 .container{
     padding:0;
-  
+    height:70vh;
+    width:40vw;
+    transform: scale(.8);
+transition: all 0.5s ;
+animation-duration: 4s;
+animation-iteration-count: 1; 
+animation-fill-mode: forwards; 
+}
+.container:hover{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+    animation-iteration-count: 0; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
 }
 .form-group{
     display:flex;
@@ -14,13 +44,11 @@
 }
 .dogForms{
     display:flex;
-    /* flex-direction: row;  */
-    /* display: inline-block; */
     width:30vw;
     text-align: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgba(44, 43, 43, 0.6);
-
+    justify-content: center;
 }
 .planTitle{
     text-align: center;
@@ -29,14 +57,12 @@
     padding-top:15vh;
     margin:0 auto;
 }
-
 .planListHeader{
     text-align: center;
     width:100vw;
     letter-spacing: 5vw;
     /* padding-top:15vh; */
     margin:0 auto;
-   
 }
 
 .addPlanBtn{
@@ -44,7 +70,6 @@
     width:10vw;
     margin-left:45vw;
 }
-
 .plans{
     text-align: center;
     border:1px solid black;
@@ -53,21 +78,19 @@
     /* width:100vw; */
     flex-direction: row;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url('./dogNose.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.384),rgba(0, 0, 0, 0.434)), url('./dogNose.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /* padding-top:15vh; */
+    background-color: rgba(44, 43, 43, 0.6);
 }
 .planTypeHeader{
     text-align: center;
     color:white;
 }
-
 .optionals{
     margin:0 auto;
     font-size: larger;
     color:white;
-   
 }
 .planListHeader{
     text-align: center;
@@ -81,18 +104,13 @@ label{
     display: flex;
     flex-direction: row;
 }
-
-
 .singlePlanPage {
   background-image:linear-gradient(to right,rgba(29, 1, 16, 0.934),rgba(11, 254, 31, 0.007),rgba(1, 32, 7, 0.651)), url("./dogNasium4.jpg");
   height: 100vh;
   color:white;
-  /* width:100vw;   */
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position-y: -10vw; */
 }
 .btn--editPlan, .btn--deletePlan{
     margin-top: 10vh;
- 
 }

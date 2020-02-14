@@ -18,6 +18,20 @@
     justify-content: space-evenly;
     background-color: rgba(26, 25, 25, 0.475);
     border-radius: 20%;
+    opacity: .55;
+    transform: scale(.75);
+    transition: all 0.5s ;
+    animation-duration: 4s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+.order:hover{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+    animation-iteration-count: 0; 
+    animation-fill-mode: forwards; 
+    animation: circle 1s linear forwards;
 }
 .btn--edit{
   border-radius: 30%;

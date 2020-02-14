@@ -15,7 +15,13 @@ export default ({ onePlan, history,match }) => {
   const [order, setOrder] = useState({});
   const [plan, setPlan] = useState({})
   const editMode = match.params.hasOwnProperty("orderId")
-  // const donate = useRef("")
+
+// const cartTotal = () => {
+//   if(parseFloat(onePlan.price)){
+//     return parseFloat(onePlan.price)
+//   }else if(parseFloat(onePlan.price) + parseFloat(order.donate))
+//   return parseFloat(onePlan.price) + parseFloat(order.donate)
+// }
 
   const chosenOption = (ev) => {
     if (ev.target.checked === true) {
@@ -36,8 +42,8 @@ export default ({ onePlan, history,match }) => {
   const checked = () => {
  
     return  options.map((o)=>{
-       console.log(o.id, "o.id")
-       console.log(OrderOption.option.id, "OO.id")
+      //  console.log(o.id, "o.id")
+      //  console.log(OrderOption.option.id, "OO.id")
      if ( o.id === OrderOption.option.id){
    return true
    }else{
@@ -113,8 +119,10 @@ export default ({ onePlan, history,match }) => {
       price: onePlan.price,
       donate: order.donate,
       option: option.optionType,
+      optionPrice: option.price,
       dateTime: Date.now(),
       userId: parseInt(localStorage.getItem('dognasium_user')),
+      total: parseFloat(onePlan.price) + parseFloat(order.donate) 
 
     })
 
@@ -126,7 +134,7 @@ export default ({ onePlan, history,match }) => {
           const optionObject = {
             orderId: response.id,
             optionId: parseInt(o),
-          } 
+        } 
           return optionObject
         })
 
@@ -135,7 +143,8 @@ export default ({ onePlan, history,match }) => {
             return addOrderOption(obj)
           }
         )
-
+        
+     
       })
       .then(() => getOrders())
       .then
@@ -143,7 +152,10 @@ export default ({ onePlan, history,match }) => {
         history.push('/orders'));
   };
 
-  return (
+
+
+
+return (
     <>
       <div className="dogForms container">
         <form className="planForm">
@@ -168,6 +180,7 @@ export default ({ onePlan, history,match }) => {
                 placeholder="$0.00"           
                 min="0.00" 
                 max="10000.00" 
+                
                 step="5.00"
                 name="donate"
                 required
@@ -180,6 +193,7 @@ export default ({ onePlan, history,match }) => {
               />
             </div>
           </fieldset>
+            <div>total:${order.total}</div>
           <button
             type="submit"
             onClick={(evt) => {

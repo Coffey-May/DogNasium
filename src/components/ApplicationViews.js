@@ -34,7 +34,7 @@ export default props => {
 
                             <Route
                                 exact
-                                path="/home"
+                                path="/"
                                 render={props => <HomeList {...props} />}
                             />
                             <Route

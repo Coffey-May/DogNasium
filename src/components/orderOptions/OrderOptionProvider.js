@@ -29,6 +29,7 @@ export const OrderOptionProvider = (props) => {
             body: JSON.stringify(orderOption)
         })
             .then(getOrderOptions)
+            
     }
 
     const addOrderOption = orderOption => {

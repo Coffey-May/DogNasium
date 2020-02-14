@@ -29,6 +29,12 @@ export const OrderProvider = (props) => {
             body: JSON.stringify(order)
         })
             .then((res) => res.json())
+            .then(
+                (response) => {
+                    getOrders()
+                    return response
+                }
+            )
     }
 
     const addOrder = order => {
@@ -39,12 +45,13 @@ export const OrderProvider = (props) => {
             },
             body: JSON.stringify(order)
         }).then(res => res.json())
+
     }
 
     const releaseOrder = order => {
         return fetch(`http://localhost:8088/orders/${order.id}`, {
             method: "DELETE",
-         
+
         })
             .then(getOrders)
     }
@@ -55,13 +62,13 @@ export const OrderProvider = (props) => {
     }, [])
 
     useEffect(() => {
-       
-       
+
+
     }, [orders])
 
     return (
         <OrderContext.Provider value={{
-            orders, addOrder, releaseOrder , updateOrders, getOrders
+            orders, addOrder, releaseOrder, updateOrders, getOrders
         }}>
             {props.children}
         </OrderContext.Provider>

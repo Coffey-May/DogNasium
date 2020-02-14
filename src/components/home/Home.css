@@ -3,6 +3,7 @@ html {
     overflow: hidden;
     margin:0 auto;
     padding: 0;
+    
 }
 body{
  
@@ -252,6 +253,7 @@ width:100%;
   animation-iteration-count: 0; 
   animation-fill-mode: forwards; 
   animation: circle 1s linear forwards;
+
   
  
   
@@ -353,3 +355,18 @@ transform-style: preserve-3d;
     
     
 }
+#middle{
+   
+ 
+}
+#doglogo{
+    display: flex;
+    flex-direction: row;
+    margin-top:45vh;
+    font-size: xx-large;
+    letter-spacing: -1.5;
+    
+}
+/* .greet{
+margin-top:-3vh;
+} */

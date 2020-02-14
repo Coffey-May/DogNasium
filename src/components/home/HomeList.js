@@ -12,23 +12,26 @@ export default (props) => {
 
   return (
     <>
-      <div className="homeWrap">
-        <div className="homeWrap2">
-          
+      <div className="homeWrap" >
+        <div className="homeWrap2" >
+      
           <main className="mainHome ">
-         
-            <div  className="Title"><h1  className="welcome"> </h1>
-            {/* <h2 className="test"><span role="img">🐶</span></h2> */}
+       
+            <div  className="Title"><h1  className="welcome" > </h1>
+            <h1 className="greet"></h1>
+            {/* <h2 className="test"><span role="img"></span></h2> */}
               <div className="pageOneWrap">
                 <div className="infoHover">
-                  <h1><span className="dogSpan">
-
+                
+                  <h1><span className="dogSpan" id="middle">
+               
                     <span>D</span>
                     <span>O</span>
                     <span>G</span>
                   </span>
+                 
                   </h1>
-                  <h2><span className="dogSpan2">
+                  <h2 ><span className="dogSpan2">
                     <span>N</span>
                     <span>A</span>
                     <span>S</span>
@@ -38,10 +41,11 @@ export default (props) => {
                   </span>
                   </h2>
                 </div>
-                <div className="titleHole">Welcome to Dog-Nasium.
+                <div className="titleHole container">Welcome to Dog-Nasium.
                 The Worlds first of its kind indoor dog park.
                 Housed inside of an 80,000 square foot geodesic dome,
                 Dog-Nasium offers a variety of amenities to dog owners of all kinds.
+                
            </div>
               </div>
             </div>
@@ -49,7 +53,7 @@ export default (props) => {
           </main>
           
 
-          <section className="homePageTwo container">
+          <section  className="homePageTwo container">
         <h1 className="packages">PACKAGE PLANS</h1>
             <div className="descriptions container">
 
@@ -174,7 +178,7 @@ export default (props) => {
             </button>
             <div className="copyFlex">
               <div>
-            <h4 className="copyR">Ⓒ<i>Coffeyright 2020</i></h4></div><div className="fbvect"></div>
+            <h4 className="copyR">Ⓒ<i>Coffeyright 2020</i></h4></div><span id="doglogo"><a href='#middle'><em><h6>To top ➤🐶</h6> </em> </a></span><div className="fbvect"></div>      
             </div>
           </section>
         </div>
