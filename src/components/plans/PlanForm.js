@@ -1,27 +1,40 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { OptionContext } from "../options/OptionProvider"
 import { OrderOptionContext } from "../orderOptions/OrderOptionProvider"
 import { OrderContext } from "../orders/OrderProvider"
+import {TotalContext} from "../total/TotalProvider"
 import Option from "../options/Option"
 
-export default ({ onePlan, history,match }) => {
+export default ({ onePlan, history, match }) => {
 
+  const {  addTotal } = useContext(TotalContext)
   const { options } = useContext(OptionContext)
-  const { addOrder, getOrders,updateOrders,orders } = useContext(OrderContext);
+  const { addOrder, getOrders, updateOrders } = useContext(OrderContext);
   const { addOrderOption, updateOrderOptions } = useContext(OrderOptionContext);
-
-  const [option, setOption] = useState({});
+  // const [total,setTotal] = useState({});
+  const [option] = useState({});
   const [OrderOption, setOrderOption] = useState([]);
   const [order, setOrder] = useState({});
-  const [plan, setPlan] = useState({})
+  // const [plan, setPlan] = useState({})
   const editMode = match.params.hasOwnProperty("orderId")
 
-// const cartTotal = () => {
-//   if(parseFloat(onePlan.price)){
-//     return parseFloat(onePlan.price)
-//   }else if(parseFloat(onePlan.price) + parseFloat(order.donate))
-//   return parseFloat(onePlan.price) + parseFloat(order.donate)
-// }
+  const cartTotal = () => {
+    console.log()
+    if (parseFloat(onePlan.price) && parseFloat(order.donate) && parseFloat()) {
+      return parseFloat(onePlan.price) + parseFloat(order.donate) + parseFloat()
+    } else if (parseFloat(onePlan.price) && parseFloat(order.donate)) {
+      return parseFloat(onePlan.price) + parseFloat(order.donate)
+    } else (parseFloat(onePlan.price))
+    return parseFloat(onePlan.price)
+
+  }
+
+
+  const theChosenOption = (ev) => {
+    const chosenId = ev.target.value
+    if (ev === chosenId)
+      return chosenId
+  };
 
   const chosenOption = (ev) => {
     if (ev.target.checked === true) {
@@ -33,24 +46,26 @@ export default ({ onePlan, history,match }) => {
       //is this id in order options
     } else if (ev.target.checked === false) {
       const oldIds = OrderOption.slice()
-      const chosenId = oldIds.findIndex()
+      const chosenId = oldIds.findIndex(() => {
+        return theChosenOption(ev)
+      })
       oldIds.splice(chosenId, 1)
       setOrderOption(oldIds)
     }
   }
 
   const checked = () => {
- 
-    return  options.map((o)=>{
-      //  console.log(o.id, "o.id")
-      //  console.log(OrderOption.option.id, "OO.id")
-     if ( o.id === OrderOption.option.id){
-   return true
-   }else{
-     return false
-   }
-   })
-   }
+
+    return options.map((o) => {
+      console.log(o.id, "o.id")
+      console.log(OrderOption.option.id, "OO.id")
+      if (o.id === OrderOption.option.id) {
+        return true
+      } else {
+        return false
+      }
+    })
+  }
 
   // const planCompletion = useRef("")
 
@@ -61,90 +76,139 @@ export default ({ onePlan, history,match }) => {
     newOrder[event.target.name] = event.target.value;
     setOrder(newOrder);
   };
-  // const setDefaults = () => {
-  //   if (editMode) {
-  //     const orderId = parseInt(match.params.orderId);
-  //     const selectedOrder = orders.find((o) => o.id === orderId) || {};
-  //     setOrder(selectedOrder);
-  //   }
-  // };
 
-  // useEffect(
-  //   () => {
-  //     setDefaults();
-  //   },
-  //   [orders]
-  // );
- 
   const constructNewOrder = () => {
-    
-    if (editMode) {
-      updateOrders({
-      orderType: onePlan.planName,
-      length: onePlan.length,
-      price: onePlan.price,
-      donate: order.donate,
-      option: option.optionType,
-      dateTime: Date.now(),
-      userId: parseInt(localStorage.getItem('dognasium_user')),
 
-    })
+    // if (editMode) {
+    //   updateOrders({
 
-      .then((response) => {
+    //     orderType: onePlan.planName,
+    //     length: onePlan.length,
+    //     price: onePlan.price,
+    //     donate: order.donate,
+    //     option: option.optionType,
+    //     dateTime: Date.now(),
+    //     userId: parseInt(localStorage.getItem('dognasium_user')),
+    //     total: cartTotal()
 
-        let newObjectArray = OrderOption.map(o => {
+    //   })
 
-          const optionObject = {
-            orderId: response.id,
-            optionId: parseInt(o),
-          }
-          return optionObject
-        })
+    //     .then((response) => {
 
-        newObjectArray.map(
-          obj => {
-            return updateOrderOptions(obj)
-          }
-        )
-      })
-  
-      .then
-      (() =>
-        history.push('/orders'));
-    }
+    //       let newObjectArray = OrderOption.map(o => {
+
+    //         const optionObject = {
+    //           orderId: response.id,
+    //           optionId: parseInt(o),
+    //         }
+    //         return optionObject
+    //       })
+
+    //       newObjectArray.map(
+    //         obj => {
+    //           return updateOrderOptions(obj)
+    //         }
+    //       )
+
+          // const figureOut = () => {    
+          //   if(newObjectArray.length === 0 ){
+          //     return cartTotal()
+          //   }else if(newObjectArray.length === 1 ){
+          //     return  newObjectArray[0].price + cartTotal() 
+          //   } else if (newObjectArray.length > 1 && newObjectArray.length < 3){
+          //     return newObjectArray[0].price + newObjectArray[1].price + cartTotal()
+          //   } 
+          //   else if (newObjectArray.length > 2 && newObjectArray.length < 4){
+          //     return newObjectArray[0].price + newObjectArray[1].price + newObjectArray[2].price + cartTotal()
+          //   }
+          //     }
+          //   console.log(figureOut())
+             
+            
+          //           addTotal({
+          //             orderId: response.id,
+          //             total: figureOut() 
+                    
+          //           })
+                  
+    //     })
+ 
+        
+
+
+    //     .then
+    //     (() =>
+    //       history.push('/orders'));
+    // }
 
     addOrder({
       orderType: onePlan.planName,
       length: onePlan.length,
       price: onePlan.price,
-      donate: order.donate,
+      donate: order.donate,   
       option: option.optionType,
       optionPrice: option.price,
       dateTime: Date.now(),
       userId: parseInt(localStorage.getItem('dognasium_user')),
-      total: parseFloat(onePlan.price) + parseFloat(order.donate) 
-
-    })
+      total: cartTotal() 
+      
+ })
 
       .then((response) => {
-        // console.log(response, "response")
-        // console.log(response.id)
+
+        const pricey = (o) => {
+          if (parseInt(o) === options[0].id) {
+            return options[0].price
+          } else if (parseInt(o) === options[1].id) {
+            return options[1].price
+          } else if (parseInt(o) === options[2].id) {
+            return options[2].price
+          }
+        }
+
         let newObjectArray = OrderOption.map(o => {
 
+          let x = pricey(o)
           const optionObject = {
             orderId: response.id,
             optionId: parseInt(o),
-        } 
+            price: parseFloat(x) 
+          }
+          //  console.log(o)
           return optionObject
         })
+
 
         newObjectArray.map(
           obj => {
             return addOrderOption(obj)
+
           }
         )
+          
+  const figureOut = () => {    
+if(newObjectArray.length === 0 ){
+  return cartTotal()
+}else if(newObjectArray.length === 1 ){
+  return  newObjectArray[0].price + cartTotal() 
+} else if (newObjectArray.length > 1 && newObjectArray.length < 3){
+  return newObjectArray[0].price + newObjectArray[1].price + cartTotal()
+} 
+else if (newObjectArray.length > 2 && newObjectArray.length < 4){
+  return newObjectArray[0].price + newObjectArray[1].price + newObjectArray[2].price + cartTotal()
+}
+  }
+console.log(figureOut())
+ 
+
+        addTotal({
+          orderId: response.id,
+          total: figureOut() 
         
-     
+        })
+      
+    
+
       })
       .then(() => getOrders())
       .then
@@ -155,7 +219,7 @@ export default ({ onePlan, history,match }) => {
 
 
 
-return (
+  return (
     <>
       <div className="dogForms container">
         <form className="planForm">
@@ -177,10 +241,10 @@ return (
               <label htmlFor="name">Donate to Rescue, any amount:{onePlan.donate} </label>
               <input
                 data-type="currency"
-                placeholder="$0.00"           
-                min="0.00" 
-                max="10000.00" 
-                
+                placeholder="$0.00"
+                min="0.00"
+                max="10000.00"
+
                 step="5.00"
                 name="donate"
                 required
@@ -193,7 +257,7 @@ return (
               />
             </div>
           </fieldset>
-            <div>total:${order.total}</div>
+          {/* <div>total:${total.total}</div> */}
           <button
             type="submit"
             onClick={(evt) => {

@@ -5,15 +5,16 @@ import "./Nav.css"
 export default (props) => {
 
     return (
+        
         <nav className="navWrap sticky-top  ">
               <div  id="navbarNav">
         <ul className="navbar navbar-dark ">
-            <li className="navbar__item ">
+            <li className="navbar__item selected">
                 <Link className="navbar__link" to="/">Home</Link>
             </li>
           
 
-            <li className="navbar__item">
+            <li className="navbar__item ">
 
 
                 {

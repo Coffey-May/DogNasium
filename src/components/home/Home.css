@@ -26,6 +26,7 @@ body{
     margin-top:70vh;
     width:20vw;
     margin-Left:40vw;
+    text-decoration: none;
     border-radius: 15%;
     transform: scale();
     transition: all 0.5s ;
@@ -47,19 +48,27 @@ body{
 .dogSpan .dogspan2{
   
    text-align: center;
+   margin-top: 0;
+   padding-top:-10vh;
+   
+   
+
    
 }
 .titleHole{
     width:100vw;
-    height:50vh;
+    height:44vh;
     overflow: scroll;
+    padding-top: 0;
+ 
+    
 }
 
 .PurchaseOptionsBtn{
     display: inline-block;
    
     background-color: rgba(0, 0, 0, 0.466);
-    margin-top:15vh;
+    /* margin-top:15vh; */
 
     border-radius: 15%;
     transform: scale();
@@ -103,11 +112,13 @@ body{
     color: white;
      font-weight: lighter;
      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+   
 
 }
 
 .Title, .Title:before{
     background: 50% 50% / cover;
+ 
   
 }
 
@@ -214,7 +225,9 @@ width:100%;
 
 
 
+
 }
+
 .infoHover{
     opacity: 1;
     transform: scale(1);
@@ -222,6 +235,8 @@ width:100%;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
     animation: circle 1s linear forwards;
+    margin-top: 0;
+    padding-top:-10vh;
 }
 /* .Title:hover{
     opacity: 1;
@@ -299,6 +314,7 @@ animation-fill-mode: forwards;
 .desc:hover{
     opacity: 1;
     transform: scale(2);
+    width:25vw;
     background-color: rgba(0, 0, 0, 0.89);
     transition: all 0.5s;
     color:white;
@@ -313,9 +329,9 @@ animation-fill-mode: forwards;
     flex-direction: column;
     
     background-color: rgba(255, 255, 255, 0.555);
-    margin-top: 20vh;
+    margin-top: 15vh;
     opacity: 0.5;
-    height:40vh;
+    height:30vh;
     padding: 0;
     
     color:rgb(0, 0, 0);
@@ -324,6 +340,7 @@ animation-fill-mode: forwards;
     animation-duration: 4s;
     animation-iteration-count: 1; 
     animation-fill-mode: forwards; 
+    
 }
 
 /* .titleHole:after{
@@ -334,7 +351,11 @@ transform-style: preserve-3d;
 
 .li {
     font-size: xx-small;
+    font-weight: bolder;
+    letter-spacing: .25vw;
+    /* line-height: 1.5vh; */
     list-style-type: none;
+    /* font-weight: lighter; */
 
 }  
 .unOrdered{
@@ -349,9 +370,10 @@ transform-style: preserve-3d;
 .packages{
     display: flex;
     margin-top:20vh;
+    width:70vw;
     flex-direction: row;
     justify-content: center;
-    color:white;
+    color:rgb(4, 0, 0);
     
     
 }

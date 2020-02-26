@@ -1,15 +1,14 @@
 // // json-server -p 8088 -w database.json
 
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
-// import { ParallaxProvider } from 'react-scroll-parallax';
+import { Route} from "react-router-dom";
 import { UserProvider } from "./auth/UserProvider";
 import { PlanProvider } from "./plans/PlanProvider";
 import { OrderProvider } from "./orders/OrderProvider";
 import { OptionProvider } from "./options/OptionProvider";
 import {OrderOptionProvider} from "./orderOptions/OrderOptionProvider"
+import {TotalProvider} from "../components/total/TotalProvider"
 import PlanList from "./plans/PlanList";
-import PlanForm from "./plans/PlanForm";
 import Order from "./orders/OrderList";
 import HomeList from "./home/HomeList";
 import PlanFormList from "./plans/PlanFormList";
@@ -26,6 +25,7 @@ export default props => {
         <>
 
             {/* <ParallaxProvider> */}
+            <TotalProvider>
             <OrderOptionProvider>
             <UserProvider>
                 <OptionProvider>
@@ -62,6 +62,7 @@ export default props => {
             </UserProvider>
             
             </OrderOptionProvider>
+            </TotalProvider>
             {/* </ParallaxProvider> */}
         </>
     );

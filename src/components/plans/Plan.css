@@ -1,7 +1,8 @@
 .planForm{
-    width:25vw;
+    width:28vw;
+    height:70vh;
     padding:2vw;
-   background-color: rgba(0, 0, 0, 0.192);
+   background-color: rgba(157, 155, 155, 0.529);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     opacity: .55;
 transform: scale(1);
@@ -47,7 +48,7 @@ animation-fill-mode: forwards;
     width:30vw;
     text-align: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgba(44, 43, 43, 0.6);
+    /* background-color: rgba(44, 43, 43, 0.6); */
     justify-content: center;
 }
 .planTitle{
@@ -86,10 +87,11 @@ animation-fill-mode: forwards;
 .planTypeHeader{
     text-align: center;
     color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .optionals{
     margin:0 auto;
-    font-size: larger;
+    font-size: large;
     color:white;
 }
 .planListHeader{
@@ -107,10 +109,17 @@ label{
 .singlePlanPage {
   background-image:linear-gradient(to right,rgba(29, 1, 16, 0.934),rgba(11, 254, 31, 0.007),rgba(1, 32, 7, 0.651)), url("./dogNasium4.jpg");
   height: 100vh;
+  margin-top:-8vh;
+  padding-top:-10vh;
   color:white;
+  /* width:100vw; */
+  
   background-size: cover;
   background-repeat: no-repeat;
 }
 .btn--editPlan, .btn--deletePlan{
     margin-top: 10vh;
+}
+.review{
+    text-align: center;
 }

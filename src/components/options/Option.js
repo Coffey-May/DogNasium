@@ -9,10 +9,11 @@ if(checked === true ){
         <section className="option">
 
             <h3 className="optionals">{option.optionType}</h3>
+            
             <input
                 type="checkbox"
                 name="optionType"
-                checked
+                // checked
                 required
                 autoFocus
                 className="form-control"
@@ -26,11 +27,11 @@ if(checked === true ){
     return (
         <section className="option">
 
-            <h3 className="optionals">{option.optionType}</h3>
+    <h3 className="optionals">Select this option for a 50% discount on all {option.optionType} products. For a price of ${option.price}</h3>
             <input
                 type="checkbox"
                 name="optionType"
-       
+                
                 required
                 autoFocus
                 className="form-control"

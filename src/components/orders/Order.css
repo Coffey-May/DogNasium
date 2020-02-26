@@ -1,6 +1,6 @@
 
 .backGroundOrderList{
-    background-image:linear-gradient(to right,rgba(74, 28, 28, 0.728),rgba(250, 250, 250, 0.125),rgba(68, 33, 33, 0.651)), url("dogHusky.jpg");
+    background-image:linear-gradient(to right,rgba(22, 8, 8, 0.712),rgba(250, 250, 250, 0.041),rgba(36, 17, 17, 0.651)), url("dogHusky.jpg");
     background-repeat: no-repeat;
     background-size: cover;
      height:100vh;
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-color: rgba(26, 25, 25, 0.475);
+    background-color: rgba(26, 25, 25, 0.646);
     border-radius: 20%;
     opacity: .55;
     transform: scale(.75);
@@ -58,6 +58,28 @@
     justify-content: space-around;
 }
 .order__name{
- text-align: center;
+ text-align: left;
  color:white;
+ /* display: flex;
+ flex-direction: row;
+ justify-content: space-between; */
+
+
+}
+hr{
+    color:white;
+}
+.hr{
+color:white;
+border: .5px solid white;
+
+margin-top: 0;
+margin-bottom: 0;
+
+}
+.interps{
+  
+}
+hr{
+    margin: 0;
 }

@@ -28,7 +28,9 @@ export const OrderOptionProvider = (props) => {
             },
             body: JSON.stringify(orderOption)
         })
-            .then(getOrderOptions)
+        
+            .then(getOrderOptions)  
+            
             
     }
 
@@ -48,6 +50,7 @@ export const OrderOptionProvider = (props) => {
             method: "DELETE",
          
         })
+        
             .then(getOrderOptions)
     }
 
